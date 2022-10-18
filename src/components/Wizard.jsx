@@ -108,7 +108,7 @@ function Wizard({ stepsData }) {
 
 	const formElements = stepsData[stepNumber].items;
 
-	console.log(formElements);
+	//console.log(formElements);
 
 	const headings = stepsData.map(function (sub) {
 		return sub.heading;
@@ -154,7 +154,7 @@ function Wizard({ stepsData }) {
 
 					<div className="flex flex-row">
 						<div className="mr-24 mt-2 h-64 w-64">
-							{/* <Progress headings={headings} currentStep={stepNumber} /> */}
+							<Progress headings={headings} currentStep={stepNumber} />
 						</div>
 						{/* <div className="w-full rounded-lg bg-gray-100 px-8 py-8"> */}
 						<div className="w-full">

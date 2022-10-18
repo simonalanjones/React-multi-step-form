@@ -10,13 +10,6 @@ export const formSteps = [
 					name: 'memberName',
 					label: 'Member name',
 					id: 'memberName',
-					validationType: 'string',
-					validations: [
-						{
-							type: 'required',
-							params: ['this field is required'],
-						},
-					],
 				},
 				{
 					type: 'txt',
@@ -116,6 +109,12 @@ export const formSteps = [
 					id: 'anaesthetistSpecCode',
 				},
 			],
+		],
+	},
+	{
+		step: 3,
+		heading: 'Procedure details',
+		items: [
 			[
 				{
 					type: 'txt',
@@ -132,19 +131,7 @@ export const formSteps = [
 					id: 'relevantContact',
 				},
 			],
-		],
-	},
-	{
-		step: 3,
-		heading: 'Procedure details',
-		items: [
 			[
-				{
-					type: 'date',
-					name: 'procedureDate',
-					label: 'Date of procedure',
-					id: 'procedureDate',
-				},
 				{
 					type: 'txt',
 					name: 'spineOrCluNumber',
@@ -152,19 +139,11 @@ export const formSteps = [
 					labelHelper: 'SPINE/CLU number prompting your referral',
 					id: 'spineOrCluNumber',
 				},
-			],
-			[
 				{
 					type: 'textArea',
 					name: 'procedureCodes',
 					label: 'Procedure codes',
 					id: 'procedureCodes',
-				},
-				{
-					type: 'txt',
-					name: 'procedureCodeTreatmentType',
-					label: 'Procedure code treatment type',
-					id: 'procedureCodeTreatmentType',
 				},
 			],
 		],

@@ -25,6 +25,9 @@ const TextArea = ({ label, ...props }) => {
 					{...props}
 				></Field>
 			</label>
+			{props.labelHelper && (
+				<p className="text-sm text-gray-400">{props.labelHelper}</p>
+			)}
 			{meta.touched && meta.error ? (
 				<div className="text-sm text-red-600">{meta.error}</div>
 			) : null}

@@ -29,6 +29,9 @@ const TextInput = ({ label, ...props }) => {
 				{...field}
 				{...props}
 			></Field>
+			{props.labelHelper && (
+				<p className="mt-2 text-sm text-gray-400">{props.labelHelper}</p>
+			)}
 
 			{/* <input
 				autoComplete="false"
