@@ -51,7 +51,7 @@ function App() {
 				</div>
 			</header> */}
 
-			<div className="container mx-auto max-w-screen-2xl">
+			<div className="container mx-auto max-w-screen-2xl ">
 				<Wizard stepsData={stepsData} />
 			</div>
 		</>
