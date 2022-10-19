@@ -1,7 +1,42 @@
 import Wizard from './components/Wizard';
+import FormSwitcher from './components/forms/elements/formSwitcher';
 import { formSteps as stepsData } from './configs/form';
+import { useState, useEffect } from 'react';
+// load the index as a JSON file
+import { index as formOptions } from './configs';
 
 function App() {
+	const [formConfig, setFormConfig] = useState('');
+
+	// make this a general purpose loader of json
+	const getData = () => {
+		fetch('src/configs/askingForPayment.json', {
+			headers: {
+				'Content-Type': 'application/json',
+				Accept: 'application/json',
+			},
+		})
+			.then(function (response) {
+				console.log(response);
+				return response.json();
+			})
+			.then(function (myJson) {
+				console.log(myJson);
+				//setData(myJson);
+			});
+	};
+
+	useEffect(() => {
+		if (formConfig != '') {
+			console.log('selected formConfig:', formConfig);
+			getData();
+		}
+	}, [formConfig]);
+
+	const callBackFn = (theVar) => {
+		setFormConfig(theVar);
+	};
+
 	return (
 		<>
 			{/* <header className="body-font bga-indigo-600 text-gray-600">
@@ -51,8 +86,11 @@ function App() {
 				</div>
 			</header> */}
 
-			<div className="container mx-auto max-w-screen-2xl ">
-				<Wizard stepsData={stepsData} />
+			<div className="container mx-auto max-w-screen-2xl">
+				{<FormSwitcher options={formOptions} callBack={callBackFn} />}
+				<div className="">
+					<Wizard stepsData={stepsData} />
+				</div>
 			</div>
 		</>
 	);

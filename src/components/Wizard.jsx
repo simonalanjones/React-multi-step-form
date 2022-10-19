@@ -149,7 +149,7 @@ function Wizard({ stepsData }) {
 			validationSchema={validateSchema}
 		>
 			{(formik) => (
-				<Form noValidate className="mx-auto mt-12 max-w-6xl pb-2">
+				<Form noValidate className="mx-auto mt-12 max-w-6xl bg-gray-100 pb-2">
 					{/* <p>props:{JSON.stringify(formik.values)}</p> */}
 
 					<div className="flex flex-row">
@@ -157,13 +157,18 @@ function Wizard({ stepsData }) {
 							<Progress headings={headings} currentStep={stepNumber} />
 						</div>
 						{/* <div className="w-full rounded-lg bg-gray-100 px-8 py-8"> */}
-						<div className="w-full">
-							{/* <h1 className="pb-6 text-xl">{stepsData[stepNumber].heading}</h1> */}
-							<WizardStep stepsData={formElements} />
-							{stepNumber !== 0 && (
-								<PreviousButton onClick={() => previous(formik.values)} />
-							)}
-							<NextButton />
+						<div className="m-8 w-full rounded-lg  border shadow-sm">
+							<div className="bg-white p-8">
+								{/* <h1 className="pb-6 text-xl">{stepsData[stepNumber].heading}</h1> */}
+								<WizardStep stepsData={formElements} />
+							</div>
+
+							<div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
+								{stepNumber !== 0 && (
+									<PreviousButton onClick={() => previous(formik.values)} />
+								)}
+								<NextButton />
+							</div>
 						</div>
 						{/* <Debug /> */}
 					</div>
