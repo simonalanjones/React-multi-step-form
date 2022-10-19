@@ -11,4 +11,12 @@ export const index = [
 		name: 'Contract Shortfall chase',
 		file: 'contractShortfallChaser',
 	},
+	{
+		name: 'Copy EDI request',
+		file: 'copyEdiRequest',
+	},
+	{
+		name: 'Dummy code needed',
+		file: 'dummyCodeNeeded',
+	},
 ];

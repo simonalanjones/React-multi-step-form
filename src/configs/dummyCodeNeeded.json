@@ -8,7 +8,7 @@
 					"type": "txt",
 					"name": "dummyCodeName",
 					"label": "Name of dummy code",
-					"id": "memberName",
+					"id": "dummyCodeName",
 					"validationType": "string",
 					"validations": [
 						{

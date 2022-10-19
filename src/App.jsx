@@ -1,40 +1,65 @@
+import { useState, useEffect } from 'react';
 import Wizard from './components/Wizard';
 import FormSwitcher from './components/forms/elements/formSwitcher';
+
 import { formSteps as stepsData } from './configs/form';
-import { useState, useEffect } from 'react';
+
 // load the index as a JSON file
 import { index as formOptions } from './configs';
 
 function App() {
-	const [formConfig, setFormConfig] = useState('');
+	// the form data used by the wizard
+	const [formConfig, setFormConfig] = useState([]);
+
+	// the selection of the dropdown used to trigger a data load of form config
+	const [formSelection, setFormSelection] = useState('');
+
+	async function fetchData(filename) {
+		const response = await fetch(`src/configs/${filename}.json`);
+		const movies = await response.json();
+		return movies;
+	}
 
 	// make this a general purpose loader of json
-	const getData = () => {
-		fetch('src/configs/askingForPayment.json', {
+	const getData = async (filename) => {
+		fetch(`src/configs/${filename}.json`, {
 			headers: {
 				'Content-Type': 'application/json',
 				Accept: 'application/json',
 			},
 		})
 			.then(function (response) {
-				console.log(response);
+				//console.log(response);
 				return response.json();
 			})
 			.then(function (myJson) {
-				console.log(myJson);
-				//setData(myJson);
+				console.log('inside async function', myJson);
+				return myJson;
 			});
 	};
 
-	useEffect(() => {
-		if (formConfig != '') {
-			console.log('selected formConfig:', formConfig);
-			getData();
-		}
-	}, [formConfig]);
+	// useEffect(() => {
+	// 	if (formSelection != '') {
 
-	const callBackFn = (theVar) => {
-		setFormConfig(theVar);
+	// 		let selection = formOptions[formSelection]; // get filename from index
+
+	// 		console.log(filename);
+	// 		let _config = getData(selection.file);
+	// 		console.log(_config);
+	// 	}
+	// }, [formSelection]);
+
+	const callBackFn = async (theVar) => {
+		//setFormSelection(theVar);
+		let selection = formOptions[theVar]; // get filename from index
+		// console.log('selected file:', selection.file);
+		// await getData(selection.file).then((data) => {
+		// 	console.log('data after call:', data);
+		// });
+		fetchData(selection.file).then((data) => {
+			console.log(data);
+			setFormConfig(data);
+		});
 	};
 
 	return (
@@ -89,7 +114,8 @@ function App() {
 			<div className="container mx-auto max-w-screen-2xl">
 				{<FormSwitcher options={formOptions} callBack={callBackFn} />}
 				<div className="">
-					<Wizard stepsData={stepsData} />
+					{/* <Wizard stepsData={stepsData} /> */}
+					<Wizard stepsData={formConfig} />
 				</div>
 			</div>
 		</>
