@@ -16,9 +16,9 @@ const AbstractFormElement = ({ item }) => {
 
 	return (
 		<FormElement
-			labelHelper={
-				item.labelHelper !== undefined ? item.labelHelper : undefined
-			}
+			// labelHelper={
+			// 	item.labelHelper !== undefined ? item.labelHelper : undefined
+			// }
 			label={item.label}
 			name={item.id}
 			id={item.id}
