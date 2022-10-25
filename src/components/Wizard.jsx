@@ -34,6 +34,13 @@ function Wizard() {
 		}
 	}, [stepsData]);
 
+	// update form when stepNumber changes
+	useEffect(() => {
+		if (Number.isInteger(stepNumber)) {
+			setFormConfig(stepsData[stepNumber].items);
+		}
+	}, [stepNumber]);
+
 	async function fetchData(filename) {
 		const response = await fetch(`src/configs/${filename}.json`);
 		return await response.json();
@@ -45,7 +52,6 @@ function Wizard() {
 			// set the entire form data
 			setStepsData(stepsData);
 		});
-		//setStepNumber(undefined);
 	};
 
 	const headings = () => {
@@ -104,9 +110,6 @@ function Wizard() {
 							noValidate
 							className="mx-auto mt-12 max-w-6xl bg-gray-100 pb-2"
 						>
-							{/* <p>props:{JSON.stringify(validateSchema())}</p>
-							<p>all:{JSON.stringify(stepsData)}</p>
-							*/}
 							<p>stepNumber:{stepNumber}</p>
 
 							<div className="flex flex-row">
@@ -116,10 +119,10 @@ function Wizard() {
 								{/* <div className="w-full rounded-lg bg-gray-100 px-8 py-8"> */}
 								<div className="m-8 w-full rounded-lg  border shadow-sm">
 									<div className="bg-white p-8">
-										{/* <h1 className="pb-6 text-xl">
+										<h1 className="pb-6 text-xl">
 											{stepsData[stepNumber].heading}
 										</h1>
-										<WizardStep stepsData={formElements} /> */}
+
 										{formConfig && <WizardStep stepsData={formConfig} />}
 									</div>
 
