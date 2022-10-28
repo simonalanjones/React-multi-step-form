@@ -4,22 +4,16 @@ import * as yup from 'yup';
 import { createYupSchema } from '../yupSchemaCreator';
 import NextButton from './forms/elements/nextButton';
 import PreviousButton from './forms/elements/previousButton';
-//import Progress from './Progress';
 import WizardStep from './WizardStep';
-import { Debug } from './Debug';
+//import { Debug } from './Debug';
 
-function Wizard({ stepsData }) {
-  console.log('wizard incoming....', stepsData);
-  // const stepsData = config;
+function Wizard({ stepsData, progressCallback }) {
   const [stepNumber, setStepNumber] = useState(); // the wizard step (0-X)
   const [formConfig, setFormConfig] = useState(null); // the current form elements for the step
   const [snapshot, setSnapshot] = useState({}); // all form fields and values as flattened array
 
-  //setStepsData(config);
-  // ** CHANGE IN FORM SELECTION **
   useEffect(() => {
     if (stepsData.length > 0) {
-      console.log('stepsData.length checked...');
       const result = stepsData.map(function (sub) {
         return sub.items.flat();
       });
@@ -32,24 +26,16 @@ function Wizard({ stepsData }) {
       setSnapshot(initialValues);
       setStepNumber(0);
       setFormConfig(stepsData[0].items);
-    } else {
-      console.log('wrong data passed to wizard');
     }
   }, [stepsData]);
 
-  // update form when stepNumber changes
+  // update form and notify progress when stepNumber changes
   useEffect(() => {
     if (Number.isInteger(stepNumber)) {
-      console.log('change to stepNumber');
       setFormConfig(stepsData[stepNumber].items);
+      progressCallback(stepNumber);
     }
   }, [stepNumber]);
-
-  // const headings = () => {
-  // 	stepsData.map(function (sub) {
-  // 		return sub.heading;
-  // 	});
-  // };
 
   const validateSchema = () => {
     const yepSchema = stepsData[stepNumber].items
@@ -70,57 +56,39 @@ function Wizard({ stepsData }) {
   };
 
   const handleSubmit = async (values, bag) => {
+    bag.setTouched({});
     next(values);
   };
 
-  const handleReset = async (values, bag) => {
-    //bag.setTouched({}, false);
-    //bag.setErrors({});
-  };
-
+  // push this into another view component
   return (
     <>
-      {Object.keys(snapshot).length}
-
-      {/* {<FormSwitcher options={formOptions} callBack={callBackFn} />} */}
-
       {Object.keys(snapshot).length > 0 && (
         <Formik
           initialValues={snapshot}
           onSubmit={handleSubmit}
-          onReset={handleReset}
-          //validationSchema={validateSchema()}
+          validationSchema={validateSchema()}
           enableReinitialize={true}
         >
           {formik => (
-            <Form
-              noValidate
-              className="mx-auto mt-12 max-w-6xl bg-gray-100 pb-2"
-            >
-              <p>stepNumber:{stepNumber}</p>
-
+            <Form noValidate>
               <div className="flex flex-row">
-                <div className="mr-24 mt-2 h-64 w-64">
-                  {/* <Progress headings={headings} currentStep={stepNumber} /> */}
-                </div>
                 {/* <div className="w-full rounded-lg bg-gray-100 px-8 py-8"> */}
-                <div className="m-8 w-full rounded-lg  border shadow-sm">
-                  <div className="bg-white p-8">
-                    {/* <h1 className="pb-6 text-xl">
-											{stepsData[stepNumber].heading}
-										</h1> */}
+                <div className="m-8 w-full">
+                  {/* <h1 className="pb-6 text-xl">
+                      {stepsData[stepNumber].heading}
+                    </h1> */}
 
-                    {formConfig && <WizardStep stepsData={formConfig} />}
-                  </div>
+                  {formConfig && <WizardStep stepsData={formConfig} />}
 
-                  <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
+                  <div className="flex items-start justify-between bg-gray-50 px-4 py-3 sm:px-6">
                     {stepNumber !== 0 && (
                       <PreviousButton onClick={() => previous(formik.values)} />
                     )}
                     <NextButton />
                   </div>
                 </div>
-                <Debug />
+                {/* <Debug /> */}
               </div>
             </Form>
           )}

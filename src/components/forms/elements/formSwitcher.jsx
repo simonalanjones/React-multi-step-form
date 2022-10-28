@@ -17,11 +17,8 @@ const FormSwitcher = ({ callBack }) => {
   ));
 
   const handleChange = e => {
-    const selected = e.target.value; // selected name
-    let selection = formOptions[selected]; // get filename from index
     setOption(formOptions[e.target.value].name);
-    fetchData(selection.file).then(stepsData => {
-      console.log(stepsData);
+    fetchData(formOptions[e.target.value].file).then(stepsData => {
       callBack(stepsData);
     });
   };

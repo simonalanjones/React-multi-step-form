@@ -47,16 +47,19 @@ export const ProgressStep = ({
   return (
     <>
       <div className={`relative flex pb-${postLength}`}>
-        <div className="absolute inset-0 flex h-full w-8 items-center justify-center">
-          <div
-            className={`pointer-events-none h-full w-0.5 ${postColour}`}
-          ></div>
-        </div>
+        {lastStep !== true && (
+          <div className="absolute inset-0 flex h-full w-8 items-center justify-center">
+            <div
+              className={`pointer-events-none h-full w-0.5 ${postColour}`}
+            ></div>
+          </div>
+        )}
         <div
           className={`relative z-10 inline-flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full ${fillColour} border-2 border-solid ${borderColour} text-white`}
         >
           {icon}
         </div>
+
         <div className="flex-grow pl-4">
           <h2
             className={`title-font mb-1 mt-1 text-sm uppercase ${textColour} font-bold`}
