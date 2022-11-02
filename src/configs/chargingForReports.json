@@ -5,7 +5,7 @@
     "items": [
       [
         {
-          "type": "txt",
+          "type": "text",
           "name": "memberName",
           "label": "Member name",
           "id": "memberName",
@@ -18,7 +18,7 @@
           ]
         },
         {
-          "type": "txt",
+          "type": "text",
           "name": "membershipNumber",
           "label": "Membership number",
           "id": "membershipNumber",
@@ -33,13 +33,13 @@
       ],
       [
         {
-          "type": "txt",
+          "type": "text",
           "name": "claimAssesmentNumber",
           "label": "Claim assessment number",
           "id": "claimAssesmentNumber"
         },
         {
-          "type": "txt",
+          "type": "text",
           "name": "claimNumber",
           "label": "Claim number",
           "id": "claimNumber"
@@ -47,7 +47,7 @@
       ],
       [
         {
-          "type": "txt",
+          "type": "text",
           "name": "workpacketNumber",
           "label": "Workpacket number",
           "id": "workpacketNumber"
@@ -79,7 +79,7 @@
     "items": [
       [
         {
-          "type": "txt",
+          "type": "text",
           "name": "providerNumber",
           "label": "Provider number",
           "id": "providerNumber",
@@ -95,14 +95,14 @@
 
       [
         {
-          "type": "txt",
+          "type": "text",
           "name": "contactWho",
           "label": "Who do you want us to contact?",
           "labelHelper": "Name of person and who they are e.g. member/secretary/hospital contact",
           "id": "contactWho"
         },
         {
-          "type": "txt",
+          "type": "text",
           "name": "relevantContact",
           "label": "Relevant email/telephone number",
           "id": "relevantContact"
@@ -116,13 +116,13 @@
     "heading": "Your details",
     "items": [
       {
-        "type": "txt",
+        "type": "text",
         "name": "yourName",
         "label": "Your name",
         "id": "yourName"
       },
       {
-        "type": "txt",
+        "type": "text",
         "name": "yourEmailAddress",
         "label": "Your email address",
         "id": "yourEmailAddress"

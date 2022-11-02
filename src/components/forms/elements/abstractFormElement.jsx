@@ -6,7 +6,7 @@ import SelectOptions from './selectOptions';
 
 const AbstractFormElement = ({ item }) => {
   const fieldMap = {
-    txt: TextInput,
+    text: TextInput,
     radio: RadioGroup,
     select: SelectOptions,
     textArea: TextArea,
@@ -16,10 +16,11 @@ const AbstractFormElement = ({ item }) => {
 
   return (
     <FormElement
-      // labelHelper={
-      // 	item.labelHelper !== undefined ? item.labelHelper : undefined
-      // }
+      labelHelper={
+        item.labelHelper !== undefined ? item.labelHelper : undefined
+      }
       label={item.label}
+      rows={item.rows !== undefined ? item.rows : 2}
       name={item.id}
       id={item.id}
       options={item.options !== undefined ? item.options : undefined}

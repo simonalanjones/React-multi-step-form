@@ -4,7 +4,7 @@ import AbstractFormElement from './forms/elements/abstractFormElement';
 const Container = ({ element, index }) => {
   if (Array.isArray(element)) {
     return (
-      <div className={`grid gap-8 pb-4 md:grid-cols-2`} key={index}>
+      <div className={`mb-2 grid gap-6 pb-4 md:grid-cols-2`} key={index}>
         {element.map((item, index) => {
           return (
             <div key={index}>

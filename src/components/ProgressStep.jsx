@@ -25,7 +25,7 @@ export const ProgressStep = ({
       </svg>
     ) : null;
 
-  const postLength = lastStep !== true ? 12 : 0;
+  const postLength = lastStep !== true ? 6 : 0;
 
   const textColour =
     current === true
@@ -46,7 +46,7 @@ export const ProgressStep = ({
 
   return (
     <>
-      <div className={`relative flex pb-${postLength}`}>
+      <div className={`relative flex pb-10`}>
         {lastStep !== true && (
           <div className="absolute inset-0 flex h-full w-8 items-center justify-center">
             <div
@@ -62,7 +62,7 @@ export const ProgressStep = ({
 
         <div className="flex-grow pl-4">
           <h2
-            className={`title-font mb-1 mt-1 text-sm uppercase ${textColour} font-bold`}
+            className={`mb-1 mt-1 text-sm uppercase ${textColour} font-bold `}
           >
             {title}
           </h2>
