@@ -31,7 +31,9 @@ const TextInput = ({ label, ...props }) => {
       ></Field>
 
       {props.labelHelper && (
-        <p className="text-xs text-gray-400">{props.labelHelper}</p>
+        <p className="pt-1 text-xs leading-4 text-gray-400">
+          {props.labelHelper}
+        </p>
       )}
 
       {meta.touched && meta.error ? (

@@ -32,14 +32,14 @@ function App() {
           </div>
         </div>
         {stepsData && (
-          <div className="abg-slate-50 flex flex-grow p-8">
+          <div className="flex flex-grow bg-slate-50 p-8">
             <div className="mx-auto flex w-screen max-w-4xl flex-col">
               <div className="flex-grow">
                 <div className="flex h-full justify-center">
                   <div className="apx-6 w-64 py-12 lg:mr-16">
                     <Progress headings={headings} currentStep={stepNumber} />
                   </div>
-                  <div className="w-full bg-white">
+                  <div className="w-full border bg-white">
                     <Wizard
                       stepsData={stepsData}
                       progressCallback={callbackProgress}
