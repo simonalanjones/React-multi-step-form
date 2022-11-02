@@ -71,23 +71,26 @@ function Wizard({ stepsData, progressCallback }) {
           enableReinitialize={true}
         >
           {formik => (
-            <Form noValidate>
-              <div className="flex flex-row">
-                {/* <div className="w-full rounded-lg bg-gray-100 px-8 py-8"> */}
-                <div className="m-8 w-full">
-                  {/* <h1 className="pb-6 text-xl">
-                      {stepsData[stepNumber].heading}
-                    </h1> */}
-
+            <Form noValidate className="h-full">
+              {/* <h1 className="pb-6 text-xl">{stepsData[stepNumber].heading}</h1> */}
+              <div className="flex h-full flex-col justify-between">
+                <div className="max-h-max max-w-2xl px-8 py-8">
                   {formConfig && <WizardStep stepsData={formConfig} />}
+                </div>
 
-                  <div className="flex items-start justify-between bg-gray-50 px-4 py-3 sm:px-6">
+                <div className="bga-slate-100/70 border-0 py-4 px-8">
+                  <div className="flex justify-between">
                     {stepNumber !== 0 && (
-                      <PreviousButton onClick={() => previous(formik.values)} />
+                      <div className="mr-3">
+                        <PreviousButton
+                          onClick={() => previous(formik.values)}
+                        />
+                      </div>
                     )}
                     <NextButton />
                   </div>
                 </div>
+
                 {/* <Debug /> */}
               </div>
             </Form>
