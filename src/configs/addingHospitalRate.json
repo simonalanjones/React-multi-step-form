@@ -17,25 +17,11 @@
             "params": ["this field is required"]
           }
         ]
-      },
-      {
-        "type": "radio",
-        "name": "workInComplaintsResolution",
-        "label": "Do you work in Complaints Resolution",
-        "id": "workInComplaintsResolution",
-        "options": ["Yes", "No"],
-        "validationType": "string",
-        "validations": [
-          {
-            "type": "required",
-            "params": ["this field is required"]
-          }
-        ]
       }
     ]
   },
   {
-    "step": 1,
+    "step": 2,
     "heading": "Member details",
     "items": [
       [
@@ -87,24 +73,6 @@
           "label": "Workpacket number",
           "id": "workpacketNumber"
         }
-      ],
-      [
-        {
-          "type": "radio",
-          "name": "memberMadeProviderAware",
-          "label": "Did the member make provider aware of their AXA policy with us",
-          "id": "memberMadeProviderAware",
-          "options": ["Yes", "No"]
-        }
-      ],
-      [
-        {
-          "type": "radio",
-          "name": "hasMemberPaid",
-          "label": "Has the member paid",
-          "id": "hasMemberPaid",
-          "options": ["Yes", "No"]
-        }
       ]
     ]
   },
@@ -125,31 +93,33 @@
               "params": ["this field is required"]
             }
           ]
-        },
+        }
+      ],
+      [
+        {
+          "type": "date",
+          "name": "procedureDate",
+          "label": "Date of procedure",
+          "id": "procedureDate"
+        }
+      ],
+      [
         {
           "type": "textArea",
           "name": "procedureCodes",
           "label": "Procedure codes",
           "id": "procedureCodes"
-        }
-      ],
-      [
-        {
-          "type": "text",
-          "name": "contactWho",
-          "label": "Who do you want us to contact?",
-          "labelHelper": "Name of person and who they are e.g. member/secretary/hospital contact",
-          "id": "contactWho"
         },
         {
-          "type": "text",
-          "name": "relevantContact",
-          "label": "Relevant email/telephone number",
-          "id": "relevantContact"
+          "type": "textArea",
+          "name": "procedureCodeTreatmentTypes",
+          "label": "Procedure code treatment types",
+          "id": "procedureCodeTreatmentTypes"
         }
       ]
     ]
   },
+
   {
     "step": 3,
     "heading": "Your details",

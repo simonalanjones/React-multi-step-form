@@ -1,5 +1,9 @@
 export const index = [
   {
+    name: 'Adding a hospital rate',
+    file: 'addingHospitalRate',
+  },
+  {
     name: 'Asking for payment',
     file: 'askingForPayment',
   },
@@ -18,5 +22,9 @@ export const index = [
   {
     name: 'Dummy code needed',
     file: 'dummyCodeNeeded',
+  },
+  {
+    name: 'Unproven equivalent hospital costs',
+    file: 'unprovenEquivalentCostsHospital',
   },
 ];
