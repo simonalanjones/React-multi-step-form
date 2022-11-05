@@ -1,0 +1,45 @@
+[
+  {
+    "team": "Clinical Claims Investigation",
+    "forms": [
+      {
+        "name": "Adding a hospital rate",
+        "file": "addingHospitalRate",
+        "description": "Some description"
+      },
+      {}
+    ]
+  },
+  {
+    "team": "Specialist Audit team",
+    "forms": []
+  },
+  {
+    "team": "Specialist Fees and Contracting",
+    "forms": []
+  },
+  {
+    "team": "Provider Account Services",
+    "forms": []
+  },
+  {
+    "team": "Hospital Audit team",
+    "forms": []
+  },
+  {
+    "team": "Hospital Relationships",
+    "forms": []
+  },
+  {
+    "team": "Provider Account Services",
+    "forms": []
+  },
+  {
+    "team": "Provider Support",
+    "forms": []
+  },
+  {
+    "team": "Provider Investigations",
+    "forms": []
+  }
+]
