@@ -7,10 +7,11 @@ import PreviousButton from './forms/elements/previousButton';
 import WizardStep from './WizardStep';
 //import { Debug } from './Debug';
 
-function Wizard({ stepsData, progressCallback }) {
+function Wizard({ stepsData, progressCallback, onSubmit }) {
   const [stepNumber, setStepNumber] = useState(); // the wizard step (0-X)
   const [formConfig, setFormConfig] = useState(null); // the current form elements for the step
   const [snapshot, setSnapshot] = useState({}); // all form fields and values as flattened array
+  const isLastStep = stepNumber - (stepsData.length - 1) == 0 ? true : false;
 
   useEffect(() => {
     if (stepsData.length > 0) {
@@ -56,6 +57,9 @@ function Wizard({ stepsData, progressCallback }) {
   };
 
   const handleSubmit = async (values, bag) => {
+    if (isLastStep === true) {
+      onSubmit(values, bag);
+    }
     bag.setTouched({});
     next(values);
   };
@@ -78,7 +82,7 @@ function Wizard({ stepsData, progressCallback }) {
                   {formConfig && <WizardStep stepsData={formConfig} />}
                 </div>
 
-                <div className="bga-slate-100/70 border-0 py-4 px-8">
+                <div className="border-0 py-4 px-8">
                   <div className="flex justify-between">
                     {stepNumber !== 0 && (
                       <div className="mr-3">

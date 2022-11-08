@@ -1,4 +1,3 @@
-import { isInteger } from 'formik';
 import { useState, useEffect } from 'react';
 
 const FormSelector = ({ callBack }) => {
@@ -24,15 +23,12 @@ const FormSelector = ({ callBack }) => {
   const selected = index => {
     const filename = options[selectedTeamIndex].forms[index].file;
     fetchForm(filename).then(stepsData => {
-      //   console.log(stepsData);
       callBack(stepsData);
     });
   };
 
   const selectForm = index => {
-    //console.log(index);
     setSelectedTeamIndex(index);
-    //console.log(options[0]);
   };
 
   const classForList = index => {

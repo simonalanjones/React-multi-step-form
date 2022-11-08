@@ -36,6 +36,19 @@
       ],
 
       {
+        "type": "text",
+        "name": "formDescription",
+        "label": "Which form are you leaving feedback about?",
+        "id": "formDescription",
+        "validationType": "string",
+        "validations": [
+          {
+            "type": "required",
+            "params": ["this field is required"]
+          }
+        ]
+      },
+      {
         "type": "textArea",
         "rows": 5,
         "name": "feedback",
