@@ -1,0 +1,54 @@
+[
+  {
+    "heading": "Your feedback",
+    "items": [
+      [
+        {
+          "type": "text",
+          "name": "yourName",
+          "label": "Your name",
+          "id": "yourName",
+          "validationType": "string",
+          "validations": [
+            {
+              "type": "required",
+              "params": ["this field is required"]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "yourEmailAddress",
+          "label": "Your email address",
+          "id": "yourEmailAddress",
+          "validationType": "string",
+          "validations": [
+            {
+              "type": "required",
+              "params": ["this field is required"]
+            },
+            {
+              "type": "email",
+              "params": ["valid email is required"]
+            }
+          ]
+        }
+      ],
+
+      {
+        "type": "textArea",
+        "rows": 5,
+        "name": "feedback",
+        "label": "Your feedback",
+        "id": "feedback",
+        "validationType": "string",
+        "validations": [
+          {
+            "type": "required",
+            "params": ["this field is required"]
+          }
+        ]
+      }
+    ]
+  }
+]
