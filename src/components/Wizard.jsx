@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Formik, Form } from 'formik';
+import { Formik, Form, isFunction } from 'formik';
 import * as yup from 'yup';
 import { createYupSchema } from '../yupSchemaCreator';
 import NextButton from './forms/elements/nextButton';
@@ -34,7 +34,9 @@ function Wizard({ stepsData, progressCallback, onSubmit }) {
   useEffect(() => {
     if (Number.isInteger(stepNumber)) {
       setFormConfig(stepsData[stepNumber].items);
-      progressCallback(stepNumber);
+      if (isFunction(progressCallback)) {
+        progressCallback(stepNumber);
+      }
     }
   }, [stepNumber]);
 
@@ -91,7 +93,7 @@ function Wizard({ stepsData, progressCallback, onSubmit }) {
                         />
                       </div>
                     )}
-                    <NextButton />
+                    <NextButton label={isLastStep ? 'Submit' : 'Next'} />
                   </div>
                 </div>
 

@@ -1,11 +1,16 @@
+import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+
 import { useState } from 'react';
 import Wizard from './components/Wizard';
 import Progress from './components/Progress';
-//import FormSwitcher from './components/forms/elements/formSwitcher';
 import logo from './assets/axa-logo-0-2048x2048.png';
-//import Layout from './components/Layout';
-import FormSelector from './components/FormSelector';
-import Feedback from './Feedback';
+//import Feedback from './Feedback';
+import MenuSelection from './MenuSelection';
+//import FormCompletion from './Form';
+import Form from './Form';
+import Index from './components/routes/Index';
+import Feedback from './components/routes/Feedback';
 
 function App() {
   const [stepsData, setStepsData] = useState(null); // all the wizard steps
@@ -14,43 +19,59 @@ function App() {
 
   const [isSelecting, setIsSelecting] = useState(true);
   const [isUsingFeedback, setIsUsingFeedback] = useState(false);
+  const [isCompletingForm, setIsCompletingForm] = useState(false);
 
   const giveFeedback = () => {
     console.log('leave feedback');
     setIsUsingFeedback(true);
-    // set-up stepData
   };
 
   const onSubmit = values => {
-    console.log('submit in App with values,', values);
+    console.log('submit in App with values:', values);
   };
 
-  const callbackForm = stepsData => {
-    setStepsData(stepsData);
-    let headings = [];
-    stepsData.map(step => {
-      headings.push(step.heading);
-    });
-    setHeadings(headings);
-    setIsSelecting(false);
+  const callbackSelectedForm = stepsData => {
+    console.log(stepsData);
+    // initiate a call to the FormCompletion component with stepsData = stepsData
+    // or store it in state along with state for isCompletingForm
   };
+
+  // const callbackForm = stepsData => {
+  //   setStepsData(stepsData);
+  //   let headings = [];
+  //   stepsData.map(step => {
+  //     headings.push(step.heading);
+  //   });
+  //   setHeadings(headings);
+  //   setIsSelecting(false);
+  // };
 
   const callbackProgress = stepNumber => {
     setStepNumber(stepNumber);
   };
 
+  // have service to get teams/forms/ etc
+
   return (
     <>
-      <div className="flex h-screen flex-col">
-        <div className="hidden bg-blue-800 py-4 sm:block"></div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="feedback" element={<Feedback />} />
+          <Route path="team/:id" element={<Index />} />
+          <Route path="form/:id" element={<Form />} />
+        </Routes>
+      </Router>
+      {/* {isSelecting && !isUsingFeedback && (
+        <MenuSelection callBack={callbackSelectedForm} />
+      )}
+      {isUsingFeedback && <Feedback onSubmit={onSubmit} />} */}
 
-        {isSelecting && !isUsingFeedback && (
-          <FormSelector callBack={callbackForm} />
-        )}
+      {/* <div className="flex h-screen flex-col">
+        <div className="hidden bg-blue-800 py-4 sm:block"></div>
 
         <div className="flex flex-grow bg-slate-50 p-8">
           <div className="mx-auto flex w-screen max-w-4xl flex-col">
-            {isUsingFeedback && <Feedback />}
             <div className="flex-grow">
               {stepsData && !isSelecting && (
                 <div className="flex h-full justify-center">
@@ -71,10 +92,9 @@ function App() {
         </div>
 
         <div className="h-8 bg-slate-50 text-center">
-          {/* <img width="48" height="48" src={logo} alt="AXA logo" /> */}
           the footer. <span onClick={() => giveFeedback()}>Leave feedback</span>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
