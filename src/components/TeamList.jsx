@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 
-const TeamList = ({ options, selected }) => {
+const TeamList = ({ options, selected, selectedTeam }) => {
   const [selectedIndex, setSelectedIndex] = useState(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
     if (selected >= 0) {
@@ -19,7 +17,7 @@ const TeamList = ({ options, selected }) => {
 
   const selectTeam = index => {
     setSelectedIndex(index);
-    navigate(`/team/${index}`);
+    selectedTeam(index);
   };
 
   return (

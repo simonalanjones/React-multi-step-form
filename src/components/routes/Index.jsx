@@ -3,11 +3,13 @@ import IndexView from '../views/Index.view';
 import TeamList from '../TeamList';
 import FormList from '../FormList';
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Index = () => {
   const [teams, setTeams] = useState([]);
   const [forms, setForms] = useState([]);
   const params = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchData().then(formData => {
@@ -28,13 +30,21 @@ const Index = () => {
     return await response.json();
   }
 
+  const selectedTeam = id => {
+    navigate(`/team/${id}`);
+  };
+
   return (
-    <>
-      <IndexView
-        teams={<TeamList options={teams} selected={params.id} />}
-        forms={<FormList forms={forms} />}
-      />
-    </>
+    <IndexView
+      teams={
+        <TeamList
+          options={teams}
+          selected={params.id}
+          selectedTeam={selectedTeam}
+        />
+      }
+      forms={<FormList forms={forms} />}
+    />
   );
 };
 
