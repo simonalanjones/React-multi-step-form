@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 
-const TeamList = ({ options, selected, selectedTeam }) => {
+const TeamList = ({ options, selected, selectedCallback }) => {
   const [selectedIndex, setSelectedIndex] = useState(null);
 
   useEffect(() => {
-    if (selected >= 0) {
-      setSelectedIndex(parseInt(selected));
+    if (selected) {
+      setSelectedIndex(selected);
     }
   }, []);
 
@@ -15,9 +15,9 @@ const TeamList = ({ options, selected, selectedTeam }) => {
       : 'block w-full cursor-pointer border-gray-200 bg-blue-700 py-3 px-6 text-white dark:border-gray-600 dark:bg-gray-800';
   };
 
-  const selectTeam = index => {
-    setSelectedIndex(index);
-    selectedTeam(index);
+  const selectTeam = urlName => {
+    setSelectedIndex(urlName); // maintain internal state
+    selectedCallback(urlName); // do callback to update page with forms
   };
 
   return (
@@ -25,12 +25,11 @@ const TeamList = ({ options, selected, selectedTeam }) => {
       <div className="mt-4 border-gray-200 text-sm font-medium text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
         {options.map((option, index) => (
           <p
-            onClick={() => selectTeam(index)}
+            onClick={() => selectTeam(option.team.urlName)}
             key={index}
-            href="#"
-            className={classForList(index)}
+            className={classForList(option.team.urlName)}
           >
-            {option.team}
+            {option.team.name}
           </p>
         ))}
       </div>

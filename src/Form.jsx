@@ -15,7 +15,28 @@ const Form = () => {
     return await response.json();
   }
 
+  async function fetchData() {
+    const response = await fetch('./../src/configs/index.json');
+    return await response.json();
+  }
+
+  async function findElement() {}
+
   useEffect(() => {
+    //console.log(params.id);
+
+    const found = fetchData()
+      .then(formData => {
+        formData.map(element => {
+          return element.forms.find(element => element.urlName === params.id);
+        });
+      })
+      .then(element => {
+        console.log(element);
+      });
+
+    //const team = teams.find(element => element.team.urlName === params.urlName);
+
     fetchForm(params.id).then(formData => {
       console.log(formData);
       setStepsData(formData);

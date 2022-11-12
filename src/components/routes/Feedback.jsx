@@ -5,6 +5,7 @@ import Wizard from '../Wizard';
 const Feedback = () => {
   const [stepsData, setStepsData] = useState(null);
 
+  // todo: https://stackoverflow.com/questions/14484613/load-local-json-file-into-variable
   async function fetchForm() {
     const response = await fetch('../src/configs/feedback.json');
     return await response.json();

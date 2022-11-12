@@ -21,40 +21,11 @@ function App() {
           <Route element={<IndexLayout />}>
             <Route path="/" element={<Index />} />
             <Route path="feedback" element={<Feedback />} />
-            <Route path="team/:id" element={<Index />} />
+            <Route path="team/:urlName" element={<Index />} />
             <Route path="form/:id" element={<Form />} />
           </Route>
         </Routes>
       </Router>
-
-      {/* <div className="flex h-screen flex-col">
-        <div className="hidden bg-blue-800 py-4 sm:block"></div>
-
-        <div className="flex flex-grow bg-slate-50 p-8">
-          <div className="mx-auto flex w-screen max-w-4xl flex-col">
-            <div className="flex-grow">
-              {stepsData && !isSelecting && (
-                <div className="flex h-full justify-center">
-                  <div className="w-64 py-12 lg:mr-16">
-                    <Progress headings={headings} currentStep={stepNumber} />
-                  </div>
-                  <div className="w-full border bg-white">
-                    <Wizard
-                      stepsData={stepsData}
-                      progressCallback={callbackProgress}
-                      onSubmit={onSubmit}
-                    />
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-
-        <div className="h-8 bg-slate-50 text-center">
-          the footer. <span onClick={() => giveFeedback()}>Leave feedback</span>
-        </div>
-      </div> */}
     </>
   );
 }

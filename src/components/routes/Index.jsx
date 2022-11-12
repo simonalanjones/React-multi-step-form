@@ -11,16 +11,27 @@ const Index = () => {
   const params = useParams();
   const navigate = useNavigate();
 
+  // 1st function: load the teams array
   useEffect(() => {
     fetchData().then(formData => {
+      console.log(formData);
       setTeams(formData);
     });
   }, []);
 
+  // 2nd function: set forms if team id given
+  // team id is param: urlName
   useEffect(() => {
-    if (params.id && teams.length > 0) {
-      setForms(teams[params.id].forms);
-      console.log(teams[params.id]);
+    if (params.urlName && teams.length > 0) {
+      const team = teams.find(
+        element => element.team.urlName === params.urlName
+      );
+      // check result found
+      if (team !== undefined) {
+        setForms(team.forms);
+      } else {
+        console.log('team name not found:', params.urlName);
+      }
     }
   });
 
@@ -31,6 +42,7 @@ const Index = () => {
   }
 
   const selectedTeam = id => {
+    //console.log(id);
     navigate(`/team/${id}`);
   };
 
@@ -39,8 +51,8 @@ const Index = () => {
       teams={
         <TeamList
           options={teams}
-          selected={params.id}
-          selectedTeam={selectedTeam}
+          selected={params.urlName}
+          selectedCallback={selectedTeam}
         />
       }
       forms={<FormList forms={forms} />}

@@ -1,6 +1,9 @@
 import { Outlet } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const IndexLayout = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="flex h-screen flex-col">
@@ -17,21 +20,10 @@ const IndexLayout = () => {
         </div>
 
         <div className="h-8 bg-slate-50 text-center">
-          the footer. <span onClick={() => giveFeedback()}>Leave feedback</span>
+          the footer.{' '}
+          <span onClick={() => navigate('/feedback')}>Leave feedback</span>
         </div>
       </div>
-
-      {/* <div className="flex h-screen flex-col">
-        <div className="hidden bg-blue-800 py-4 sm:block"></div>
-
-        <div className="container mx-auto max-w-6xl ">
-          <div className="flex flex-row gap-12 py-4">
-            <Outlet />
-          </div>
-        </div>
-
-        <div className="h-8 bg-slate-50 text-center">the footer.</div>
-      </div> */}
     </>
   );
 };

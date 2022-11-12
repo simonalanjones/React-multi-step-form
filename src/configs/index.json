@@ -1,110 +1,152 @@
 [
   {
-    "team": "Clinical Claims Investigation",
+    "team": {
+      "name": "Clinical Claims Investigation",
+      "urlName": "clinical-claims-investigation",
+      "email": ""
+    },
     "forms": [
       {
         "name": "Adding a hospital rate",
         "file": "addingHospitalRate",
+        "urlName": "adding-hospital-rate",
         "description": "Some long description which explains when to use this particular form in some circumstances"
       },
       {
         "name": "Another form name",
         "file": "addingHospitalRate",
+        "urlName": "adding-hospital-rate",
         "description": "Another form description"
       },
       {
         "name": "Leave feedback",
         "file": "feedback",
+        "urlName": "leave-application-feedback",
         "description": "Provide feedback about this application"
       },
       {
         "name": "Another form name",
         "file": "addingHospitalRate",
+        "urlName": "adding-hospital-rate",
         "description": "Another form description"
       },
       {
         "name": "Another form name",
         "file": "addingHospitalRate",
+        "urlName": "adding-hospital-rate",
         "description": "Another form description"
       }
     ]
   },
   {
-    "team": "Specialist Audit team",
+    "team": {
+      "name": "Specialist Audit team",
+      "urlName": "specialist-audit-team",
+      "email": ""
+    },
     "forms": [
       {
         "name": "Adding a hospital rate",
         "file": "addingHospitalRate",
+        "urlName": "adding-hospital-rate",
         "description": "Some long description which explains when to use this particular form in some circumstances"
       },
       {
         "name": "Asking for payment",
         "file": "addingHospitalRate",
+        "urlName": "asking-for-payment",
         "description": "Another form description"
       },
       {
         "name": "Charging for medical reports",
         "file": "addingHospitalRate",
+        "urlName": "adding-hospital-rate",
         "description": "Another form description"
       },
       {
         "name": "Another form name",
         "file": "addingHospitalRate",
+        "urlName": "adding-hospital-rate",
         "description": "Another form description"
       },
       {
         "name": "Another form name",
         "file": "addingHospitalRate",
+        "urlName": "adding-hospital-rate",
         "description": "Another form description"
       },
       {
         "name": "Another form name",
         "file": "addingHospitalRate",
+        "urlName": "adding-hospital-rate",
         "description": "Another form description"
       },
       {
         "name": "Another form name",
         "file": "addingHospitalRate",
+        "urlName": "adding-hospital-rate",
         "description": "Another form description"
       },
       {
         "name": "Another form name",
         "file": "addingHospitalRate",
+        "urlName": "adding-hospital-rate",
         "description": "Another form description"
       },
       {
         "name": "Another form name",
         "file": "addingHospitalRate",
+        "urlName": "adding-hospital-rate",
         "description": "Another form description"
       }
     ]
   },
   {
-    "team": "Specialist Fees and Contracting",
+    "team": {
+      "name": "Specialist Fees and Contracting",
+      "urlName": "specialist-fees-and-contracting",
+      "email": ""
+    },
     "forms": []
   },
   {
-    "team": "Provider Account Services",
+    "team": {
+      "name": "Provider Account Services",
+      "urlName": "provider-account-services",
+      "email": ""
+    },
     "forms": []
   },
   {
-    "team": "Hospital Audit team",
+    "team": {
+      "name": "Hospital Audit team",
+      "urlName": "hospital-audit-team",
+      "email": ""
+    },
     "forms": []
   },
   {
-    "team": "Hospital Relationships",
+    "team": {
+      "name": "Hospital Relationships",
+      "urlName": "hospital-relationships",
+      "email": ""
+    },
     "forms": []
   },
   {
-    "team": "Provider Account Services",
+    "team": {
+      "name": "Provider Support",
+      "urlName": "provider-support",
+      "email": ""
+    },
     "forms": []
   },
   {
-    "team": "Provider Support",
-    "forms": []
-  },
-  {
-    "team": "Provider Investigations",
+    "team": {
+      "name": "Provider Investigations",
+      "urlName": "provider-investigations",
+      "email": ""
+    },
     "forms": []
   }
 ]
