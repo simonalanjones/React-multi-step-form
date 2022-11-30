@@ -7,12 +7,12 @@ const IndexLayout = () => {
   return (
     <>
       <div className="flex h-screen flex-col">
-        <div className="hidden bg-blue-800 py-4 sm:block"></div>
+        <div className="bg-blue-800 py-4 text-white sm:block">Header</div>
 
         <div className="flex flex-grow bg-slate-50 p-8">
-          <div className="mx-auto flex w-screen max-w-4xl flex-col">
+          <div className="mx-auto flex w-screen max-w-4xl">
             <div className="flex-grow">
-              <div className="flex h-full justify-center">
+              <div className="flex justify-center overflow-hidden">
                 <Outlet />
               </div>
             </div>

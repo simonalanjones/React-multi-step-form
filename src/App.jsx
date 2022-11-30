@@ -18,12 +18,11 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route element={<IndexLayout />}>
-            <Route path="/" element={<Index />} />
-            <Route path="feedback" element={<Feedback />} />
-            <Route path="team/:urlName" element={<Index />} />
-            <Route path="form/:id" element={<Form />} />
-          </Route>
+          <Route path="/" element={<Index />} />
+          <Route element={<IndexLayout />}></Route>
+          <Route path="team/:urlName" element={<Index />} />
+          <Route path="feedback" element={<Feedback />} />
+          <Route path="form/:id" element={<Form />} />
         </Routes>
       </Router>
     </>

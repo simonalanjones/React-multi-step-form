@@ -1,12 +1,17 @@
-const IndexView = ({ teams, forms }) => {
+const IndexView = ({ teams, forms, feedbackLink }) => {
+  //console.log('in indexview');
   return (
     <>
-      <aside className="w-full sm:w-1/3 md:w-1/4">
-        <div className="top-0 w-full">{teams}</div>
-      </aside>
-      <main role="main" className="asm:w-2/3 amd:w-3/4 w-full pt-1">
-        {forms}
-      </main>
+      <div className="abg-slate-50 container flex h-screen flex-col">
+        <div className="bg-slate-50 text-center">TOP NAV</div>
+
+        <div className="abg-green-500 mx-auto max-w-5xl flex-grow md:flex">
+          <div className="aborder abg-slate-100 p-4 pt-8">{teams}</div>
+
+          <div className="abg-slate-700 p-4">{forms}</div>
+        </div>
+        <div className="bg-slate-50 text-center">BOTTOM NAV</div>
+      </div>
     </>
   );
 };

@@ -14,7 +14,7 @@ const Index = () => {
   // 1st function: load the teams array
   useEffect(() => {
     fetchData().then(formData => {
-      console.log(formData);
+      //console.log(formData);
       setTeams(formData);
     });
   }, []);
@@ -23,8 +23,10 @@ const Index = () => {
   // team id is param: urlName
   useEffect(() => {
     if (params.urlName && teams.length > 0) {
+      //console.log('here....');
       const team = teams.find(
         element => element.team.urlName === params.urlName
+        //
       );
       // check result found
       if (team !== undefined) {
@@ -33,9 +35,18 @@ const Index = () => {
         console.log('team name not found:', params.urlName);
       }
     }
+
+    // else no team set so add all forms into form list
+    if (!params.urlName && forms === []) {
+      fetchData().then(formData => {
+        const forms = formData.map(element => element.forms).flat();
+        console.log(forms);
+        setForms(forms);
+      });
+    }
   });
 
-  // have service to get teams/forms/ etc
+  // todo: have service to get teams/forms/ etc
   async function fetchData() {
     const response = await fetch('./../src/configs/index.json');
     return await response.json();
@@ -46,8 +57,18 @@ const Index = () => {
     navigate(`/team/${id}`);
   };
 
+  const selectedForm = id => {
+    console.log(id);
+    navigate(`/form/${id}`);
+  };
+
+  const feedbackLink = () => {
+    navigate('/feedback');
+  };
+
   return (
     <IndexView
+      feedbackLink={feedbackLink}
       teams={
         <TeamList
           options={teams}
@@ -55,7 +76,7 @@ const Index = () => {
           selectedCallback={selectedTeam}
         />
       }
-      forms={<FormList forms={forms} />}
+      forms={<FormList forms={forms} selectedCallback={selectedForm} />}
     />
   );
 };

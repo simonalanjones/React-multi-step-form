@@ -92,12 +92,6 @@
         "file": "addingHospitalRate",
         "urlName": "adding-hospital-rate",
         "description": "Another form description"
-      },
-      {
-        "name": "Another form name",
-        "file": "addingHospitalRate",
-        "urlName": "adding-hospital-rate",
-        "description": "Another form description"
       }
     ]
   },
