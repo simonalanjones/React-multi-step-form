@@ -1,5 +1,5 @@
 const IndexView = ({ teams, forms, feedbackLink }) => {
-  //console.log('in indexview');
+  console.log('in indexview');
   return (
     <>
       <div className="abg-slate-50 container flex h-screen flex-col">
