@@ -21,7 +21,7 @@ export const ProgressStep = ({
       </svg>
     ) : current === true ? (
       <svg height="50" width="50">
-        <circle cx="14" cy="25" r="5" fill="#4f46e5" />
+        <circle cx="14" cy="25" r="5" fill="#1E40AF" />
       </svg>
     ) : null;
 
@@ -29,24 +29,26 @@ export const ProgressStep = ({
 
   const textColour =
     current === true
-      ? 'text-indigo-600'
+      ? 'text-blue-800'
       : previous === true
       ? 'text-gray-600'
       : 'text-gray-400';
 
   const postColour =
-    previous === true && selected === false ? 'bg-indigo-600' : 'bg-gray-300';
+    previous === true && selected === false ? 'bg-blue-800' : 'bg-gray-300';
 
-  const fillColour = previous === true ? 'bg-indigo-600' : 'bg-white';
+  const fillColour = previous === true ? 'bg-blue-800' : 'bg-white';
 
   const borderColour =
     current === true || previous === true
-      ? 'border-indigo-600'
+      ? 'border-blue-800'
       : 'border-gray-300';
+
+  const paddingBottom = lastStep !== true ? 'pb-10' : '';
 
   return (
     <>
-      <div className={`relative flex pb-10`}>
+      <div className={`relative flex ${paddingBottom}`}>
         {lastStep !== true && (
           <div className="absolute inset-0 flex h-full w-8 items-center justify-center">
             <div
