@@ -21,8 +21,8 @@ const AbstractFormElement = ({ item }) => {
       }
       label={item.label}
       rows={item.rows !== undefined ? item.rows : 2}
-      name={item.id}
-      id={item.id}
+      name={item.id !== undefined ? item.id : '*undefined*'}
+      id={item.id !== undefined ? item.id : '*undefined*'}
       options={item.options !== undefined ? item.options : undefined}
       required={
         item.validations && item.validations[0].type === 'required'
