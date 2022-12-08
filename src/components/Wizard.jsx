@@ -20,7 +20,7 @@ function Wizard({ stepsData, progressCallback, onSubmit }) {
       });
 
       let initialValues = {};
-      result.flat().map(element => {
+      result.flat().map((element) => {
         initialValues[element.id] = '';
       });
 
@@ -48,12 +48,12 @@ function Wizard({ stepsData, progressCallback, onSubmit }) {
     return validateSchema;
   };
 
-  const next = values => {
+  const next = (values) => {
     setSnapshot(values);
     setStepNumber(Math.min(stepNumber + 1, stepsData.length - 1));
   };
 
-  const previous = values => {
+  const previous = (values) => {
     setSnapshot(values);
     setStepNumber(Math.max(stepNumber - 1, 0));
   };
@@ -76,11 +76,11 @@ function Wizard({ stepsData, progressCallback, onSubmit }) {
           validationSchema={validateSchema()}
           enableReinitialize={true}
         >
-          {formik => (
+          {(formik) => (
             <Form noValidate className="h-full">
               {/* <h1 className="pb-6 text-xl">{stepsData[stepNumber].heading}</h1> */}
               <div className="flex h-full flex-col justify-between">
-                <div className="max-h-max max-w-2xl px-8 py-8">
+                <div className="amax-w-2xl max-h-max px-8 py-8">
                   {formConfig && <WizardStep stepsData={formConfig} />}
                 </div>
 
