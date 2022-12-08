@@ -1,6 +1,7 @@
 import IndexView from '../views/Index.view';
 import TeamList from '../TeamList';
 import FormList from '../FormList';
+import FormListEmpty from '../FormListEmpty';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import useTeams from '../hooks/useTeams';
@@ -23,6 +24,13 @@ const Index = () => {
     navigate('/feedback');
   };
 
+  const formsComp = (forms) => {
+    if (forms.length > 0) {
+      return <FormList forms={forms} selectedCallback={selectedForm} />;
+    }
+    return <FormListEmpty />;
+  };
+
   return (
     <IndexView
       feedbackLink={feedbackLink}
@@ -33,7 +41,7 @@ const Index = () => {
           selectedCallback={selectedTeam}
         />
       }
-      forms={<FormList forms={forms} selectedCallback={selectedForm} />}
+      forms={formsComp(forms)}
     />
   );
 };
