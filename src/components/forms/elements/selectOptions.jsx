@@ -1,10 +1,10 @@
 import { useField, Field } from 'formik';
 import Label from './label';
-// import LabelHelper from './labelHelper';
+import LabelHelper from './labelHelper';
 import ErrorText from './errorText';
 
 const SelectOptions = ({ label, options, ...props }) => {
-  const [field, meta] = useField(props);
+  const [meta] = useField(props);
 
   const choices = options.map((option, index) => (
     <option key={index} value={option}>
@@ -19,12 +19,9 @@ const SelectOptions = ({ label, options, ...props }) => {
         required={props.required}
         htmlFor={props.id || props.name}
       />
-
       <Field
         className={
-          meta.touched && meta.error
-            ? 'mt-1 w-full rounded-md border border-rose-600 py-2 px-3'
-            : 'mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm'
+          meta.touched && meta.error ? 'form-input-error' : 'form-input-ok'
         }
         as="select"
         id={props.name}
@@ -33,6 +30,7 @@ const SelectOptions = ({ label, options, ...props }) => {
         <option value="">Select an option</option>
         {choices}
       </Field>
+      {props.labelHelper && <LabelHelper helperText={props.labelHelper} />}
       {meta.touched && meta.error && <ErrorText error={meta.error} />}
     </>
   );
