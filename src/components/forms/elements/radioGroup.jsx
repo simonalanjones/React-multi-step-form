@@ -1,32 +1,33 @@
 import { useField } from 'formik';
-//import Label from './label';
-//import LabelHelper from './labelHelper';
+import Label from './label';
+import LabelHelper from './labelHelper';
 import ErrorText from './errorText';
 import RequiredMark from './requiredMark';
 
 const RadioGroup = ({ label, options, ...props }) => {
   const [field, meta] = useField(props);
   const radios = options.map((option, index) => (
-    <div key={index} className="form-check mb-1">
-      <input
-        className={
-          meta.touched && meta.error
-            ? 'rounded-lg border border-rose-600'
-            : 'h-4 w-4 border-gray-300 text-blue-600 shadow focus:ring-blue-500'
-        }
-        {...field}
-        id={`${field.name}${index}`}
-        data-testid={`${field.name}${option}`}
-        name={field.name}
-        value={option}
-        type="radio"
-        checked={meta.value === option}
-      />
+    <div key={index}>
+      <div className="mb-1 flex items-center">
+        <input
+          className={
+            meta.touched && meta.error ? 'form-radio-error' : 'form-radio-ok'
+          }
+          {...field}
+          id={`${field.name}${index}`}
+          data-testid={`${field.name}${option}`}
+          name={field.name}
+          value={option}
+          type="radio"
+          checked={meta.value === option}
+        />
 
-      <label htmlFor={`${field.name}${index}`} className="form-label-radio">
-        {option}
-      </label>
-
+        <Label
+          text={option}
+          required={false}
+          htmlFor={`${field.name}${index}`}
+        />
+      </div>
       {index === options.length - 1 && meta.touched && meta.error && (
         <ErrorText error={meta.error} />
       )}
@@ -39,7 +40,9 @@ const RadioGroup = ({ label, options, ...props }) => {
         {label}
         {props.required && <RequiredMark />}
       </p>
+
       {radios}
+      {props.labelHelper && <LabelHelper helperText={props.labelHelper} />}
     </>
   );
 };
