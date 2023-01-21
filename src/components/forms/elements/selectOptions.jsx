@@ -4,7 +4,7 @@ import LabelHelper from './labelHelper';
 import ErrorText from './errorText';
 
 const SelectOptions = ({ label, options, ...props }) => {
-  const [meta] = useField(props);
+  const [field, meta] = useField(props);
 
   const choices = options.map((option, index) => (
     <option key={index} value={option}>
@@ -19,13 +19,14 @@ const SelectOptions = ({ label, options, ...props }) => {
         required={props.required}
         htmlFor={props.id || props.name}
       />
+
       <Field
         className={
           meta.touched && meta.error ? 'form-input-error' : 'form-input-ok'
         }
         as="select"
-        id={props.name}
-        name={props.name}
+        id={field.name}
+        name={field.name}
       >
         <option value="">Select an option</option>
         {choices}

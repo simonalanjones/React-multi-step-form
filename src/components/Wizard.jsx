@@ -7,7 +7,7 @@ import PreviousButton from './forms/elements/previousButton';
 import WizardStep from './WizardStep';
 //import { Debug } from './Debug';
 
-function Wizard({ stepsData, progressCallback, onSubmit }) {
+function Wizard({ stepsData, progressCallback, onSubmit, isSubmitting }) {
   const [stepNumber, setStepNumber] = useState(); // the wizard step (0-X)
   const [formConfig, setFormConfig] = useState(null); // the current form elements for the step
   const [snapshot, setSnapshot] = useState({}); // all form fields and values as flattened array
@@ -79,20 +79,24 @@ function Wizard({ stepsData, progressCallback, onSubmit }) {
           {(formik) => (
             <Form noValidate className="h-full">
               {/* <h1 className="pb-6 text-xl">{stepsData[stepNumber].heading}</h1> */}
-              <div className="flex h-full flex-col justify-between">
-                <div className="amax-w-2xl max-h-max px-8 py-8">
+              <div className="flex h-full flex-col justify-between rounded-md border border-slate-100 bg-gray-50/30">
+                <div className="max-h-max max-w-2xl px-8 py-8">
                   {formConfig && <WizardStep stepsData={formConfig} />}
                 </div>
+                <div className="flex grow flex-col-reverse">
+                  <div className="px-8 py-2 text-right text-sm text-gray-500">
+                    Fields marked
+                    <span className="mx-1 text-red-600">*</span>are required
+                  </div>
+                </div>
 
-                <div className="border-0 py-4 px-8">
-                  <div className="flex justify-between">
-                    {stepNumber !== 0 && (
-                      <div className="mr-3">
-                        <PreviousButton
-                          onClick={() => previous(formik.values)}
-                        />
-                      </div>
-                    )}
+                <div className="rounded-b-md bg-gray-100 px-8 py-4">
+                  {stepNumber !== 0 && (
+                    <div className="float-left">
+                      <PreviousButton onClick={() => previous(formik.values)} />
+                    </div>
+                  )}
+                  <div className="float-right">
                     <NextButton label={isLastStep ? 'Submit' : 'Next'} />
                   </div>
                 </div>

@@ -11,6 +11,11 @@ const Index = () => {
   const params = useParams();
   const { teams, forms } = useTeams(params.urlName);
 
+  // sort the list of forms (A-Z)
+  forms.sort((a, b) => (a.name > b.name ? 1 : -1));
+  // sort teams array (A-Z)
+  teams.sort((a, b) => (a.team.name > b.team.name ? 1 : -1));
+
   const selectedTeam = (id) => {
     navigate(`/team/${id}`);
   };
