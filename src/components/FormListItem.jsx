@@ -3,7 +3,7 @@ const FormListItem = ({ name, description, url }) => {
     <div className="mt-2 mb-6 flex flex-col lg:gap-y-5">
       <div className="flex flex-row flex-wrap gap-x-6 lg:flex-nowrap">
         <div className="w-full text-center md:text-left">
-          <p className="text-base font-medium">{name}</p>
+          <p className="text-lg font-medium">{name}</p>
           <p className="py-1 text-sm text-gray-500">{description}</p>
         </div>
 
