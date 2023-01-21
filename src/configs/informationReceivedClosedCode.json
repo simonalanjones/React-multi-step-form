@@ -7,7 +7,7 @@
         "type": "textArea",
         "name": "theRequest",
         "label": "What would you like us to do?",
-        "labelHelper": "Please be as detailed as possible and explain your expected outcome if appropriate",
+        "labelHelper": "Please be as detailed as possible and explain your expected outcome if appropriate.",
         "id": "theRequest",
         "rows": 5,
         "validationType": "string",
@@ -20,9 +20,9 @@
       },
       {
         "type": "radio",
-        "name": "workInComplaintsResolution",
-        "label": "Do you work in Complaints Resolution",
-        "id": "workInComplaintsResolution",
+        "name": "workInCR",
+        "label": "Do you work in Complaints Resolution?",
+        "id": "workInCR",
         "options": ["Yes", "No"],
         "validationType": "string",
         "validations": [
@@ -71,7 +71,14 @@
           "type": "text",
           "name": "claimAssesmentNumber",
           "label": "Claim assessment number",
-          "id": "claimAssesmentNumber"
+          "id": "claimAssesmentNumber",
+          "validationType": "string",
+          "validations": [
+            {
+              "type": "required",
+              "params": ["this field is required"]
+            }
+          ]
         },
         {
           "type": "text",
@@ -87,29 +94,11 @@
           "label": "Workpacket number",
           "id": "workpacketNumber"
         }
-      ],
-      [
-        {
-          "type": "radio",
-          "name": "memberMadeProviderAware",
-          "label": "Did the member make provider aware of their AXA policy with us",
-          "id": "memberMadeProviderAware",
-          "options": ["Yes", "No"]
-        }
-      ],
-      [
-        {
-          "type": "radio",
-          "name": "hasMemberPaid",
-          "label": "Has the member paid",
-          "id": "hasMemberPaid",
-          "options": ["Yes", "No"]
-        }
       ]
     ]
   },
   {
-    "step": 3,
+    "step": 2,
     "heading": "Provider details",
     "items": [
       [
@@ -125,6 +114,14 @@
               "params": ["this field is required"]
             }
           ]
+        }
+      ],
+      [
+        {
+          "type": "textArea",
+          "name": "relatedProviderDetails",
+          "label": "Related provider names and numbers",
+          "id": "relatedProviderDetails"
         },
         {
           "type": "textArea",
@@ -138,34 +135,77 @@
           "type": "text",
           "name": "contactWho",
           "label": "Who do you want us to contact?",
-          "labelHelper": "Name of person and who they are e.g. member/secretary/hospital contact",
+          "labelHelper": "Name or person and who they are e.g. member/secretary/hospital contact",
           "id": "contactWho"
         },
         {
           "type": "text",
-          "name": "relevantContact",
+          "name": "contactDetails",
           "label": "Relevant email/telephone number",
-          "id": "relevantContact"
+          "id": "contactDetails"
+        }
+      ],
+      [
+        {
+          "type": "date",
+          "name": "procedureDate",
+          "label": "Date of procedure",
+          "id": "procedureDate"
         }
       ]
     ]
   },
   {
-    "step": 4,
+    "step": 3,
     "heading": "Your details",
     "items": [
-      {
-        "type": "text",
-        "name": "yourName",
-        "label": "Your name",
-        "id": "yourName"
-      },
-      {
-        "type": "text",
-        "name": "yourEmailAddress",
-        "label": "Your email address",
-        "id": "yourEmailAddress"
-      }
+      [
+        {
+          "type": "text",
+          "name": "yourName",
+          "label": "Your name",
+          "id": "yourName",
+          "validationType": "string",
+          "validations": [
+            {
+              "type": "required",
+              "params": ["this field is required"]
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "type": "text",
+          "name": "yourEmailAddress",
+          "label": "Your email address",
+          "id": "yourEmailAddress",
+          "validationType": "string",
+          "validations": [
+            {
+              "type": "required",
+              "params": ["this field is required"]
+            },
+            {
+              "type": "email",
+              "params": ["valid email is required"]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "yourDept",
+          "label": "Your department",
+          "id": "yourDept",
+          "validationType": "string",
+          "validations": [
+            {
+              "type": "required",
+              "params": ["this field is required"]
+            }
+          ]
+        }
+      ]
     ]
   }
 ]

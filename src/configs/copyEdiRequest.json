@@ -1,6 +1,27 @@
 [
   {
     "step": 1,
+    "heading": "Request details",
+    "items": [
+      {
+        "type": "textArea",
+        "name": "theRequest",
+        "label": "What would you like us to do?",
+        "labelHelper": "Please be as detailed as possible and explain your expected outcome if appropriate. Please note this copy invoice will be sent back to the originator of the request",
+        "id": "theRequest",
+        "rows": 5,
+        "validationType": "string",
+        "validations": [
+          {
+            "type": "required",
+            "params": ["this field is required"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "step": 2,
     "heading": "Member details",
     "items": [
       [
@@ -34,7 +55,7 @@
     ]
   },
   {
-    "step": 2,
+    "step": 3,
     "heading": "Provider details",
     "items": [
       [
@@ -86,19 +107,17 @@
           "id": "cuid"
         }
       ],
-      [
-        {
-          "type": "text",
-          "name": "claimKey",
-          "label": "Claim key",
-          "id": "claimKey"
-        }
-      ]
+      {
+        "type": "text",
+        "name": "claimKey",
+        "label": "Claim key",
+        "id": "claimKey"
+      }
     ]
   },
 
   {
-    "step": 3,
+    "step": 4,
     "heading": "Your details",
     "items": [
       [

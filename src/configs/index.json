@@ -10,31 +10,7 @@
         "name": "Adding a hospital rate",
         "file": "addingHospitalRate",
         "urlName": "adding-hospital-rate",
-        "description": "Some long description which explains when to use this particular form in some circumstances"
-      },
-      {
-        "name": "Another form name",
-        "file": "addingHospitalRate",
-        "urlName": "adding-hospital-rate",
-        "description": "Another form description"
-      },
-      {
-        "name": "Leave feedback",
-        "file": "feedback",
-        "urlName": "leave-application-feedback",
-        "description": "Provide feedback about this application"
-      },
-      {
-        "name": "Another form name",
-        "file": "addingHospitalRate",
-        "urlName": "adding-hospital-rate",
-        "description": "Another form description"
-      },
-      {
-        "name": "Another form name",
-        "file": "addingHospitalRate",
-        "urlName": "adding-hospital-rate",
-        "description": "Another form description"
+        "description": "Facilitate a claims payment"
       }
     ]
   },
@@ -46,52 +22,16 @@
     },
     "forms": [
       {
-        "name": "Adding a hospital rate",
-        "file": "addingHospitalRate",
-        "urlName": "adding-hospital-rate",
-        "description": "Some long description which explains when to use this particular form in some circumstances"
-      },
-      {
-        "name": "Asking for payment",
-        "file": "addingHospitalRate",
-        "urlName": "asking-for-payment",
-        "description": "Another form description"
-      },
-      {
         "name": "Charging for medical reports",
-        "file": "addingHospitalRate",
-        "urlName": "adding-hospital-rate",
-        "description": "Another form description"
+        "file": "chargingForReports",
+        "urlName": "charging-for-reports",
+        "description": "The member is being asked by the provider to pay for their medical reports"
       },
       {
-        "name": "Another form name",
-        "file": "addingHospitalRate",
-        "urlName": "adding-hospital-rate",
-        "description": "Another form description"
-      },
-      {
-        "name": "Another form name",
-        "file": "addingHospitalRate",
-        "urlName": "adding-hospital-rate",
-        "description": "Another form description"
-      },
-      {
-        "name": "Another form name",
-        "file": "addingHospitalRate",
-        "urlName": "adding-hospital-rate",
-        "description": "Another form description"
-      },
-      {
-        "name": "Another form name",
-        "file": "addingHospitalRate",
-        "urlName": "adding-hospital-rate",
-        "description": "Another form description"
-      },
-      {
-        "name": "Another form name",
-        "file": "addingHospitalRate",
-        "urlName": "adding-hospital-rate",
-        "description": "Another form description"
+        "name": "Asking for payment upfront",
+        "file": "askingForPayment",
+        "urlName": "asking-for-payment",
+        "description": "The member is being asked by the specialist/hospital to pay costs in advance"
       }
     ]
   },
@@ -101,7 +41,32 @@
       "urlName": "specialist-fees-and-contracting",
       "email": ""
     },
-    "forms": []
+    "forms": [
+      {
+        "name": "Follow up within 10 days / pre-operative assessment",
+        "file": "followUpWithinDaysPreoperativeAssessment",
+        "urlName": "follow-up-within-days-preoperative-assessment",
+        "description": "Description needed"
+      },
+      {
+        "name": "Pre-operative fee uplift",
+        "file": "preOperativeFeeUplift",
+        "urlName": "pre-operative-fee-uplift",
+        "description": "Description needed"
+      },
+      {
+        "name": "Post-operative fee uplift",
+        "file": "postOperativeFeeUplift",
+        "urlName": "post-operative-fee-uplift",
+        "description": "Description needed"
+      },
+      {
+        "name": "Contractual shortfall chasers",
+        "file": "contractShortfallChaser",
+        "urlName": "contract-shortfall-chaser",
+        "description": "For fee approved specialists, practitioners and ZZ clinics"
+      }
+    ]
   },
   {
     "team": {
@@ -109,7 +74,32 @@
       "urlName": "provider-account-services",
       "email": ""
     },
-    "forms": []
+    "forms": [
+      {
+        "name": "Copy EDI request",
+        "file": "copyEdiRequest",
+        "urlName": "copy-edi-request",
+        "description": "Description needed"
+      },
+      {
+        "name": "Copy remittance for a Provider",
+        "file": "copyRemittanceProvider",
+        "urlName": "copy-remittance-provider",
+        "description": "Description needed"
+      },
+      {
+        "name": "Provider recoup: claim no longer on CREST",
+        "file": "providerRecoupCrest",
+        "urlName": "provider-recoup-crest",
+        "description": "Description needed"
+      },
+      {
+        "name": "Provider stop/reissue Cheque",
+        "file": "providerStopChequeReissue",
+        "urlName": "provider-stop-cheque-reissue",
+        "description": "Cancel a previously issued cheque to a provider and request a replacement"
+      }
+    ]
   },
   {
     "team": {
@@ -125,7 +115,14 @@
       "urlName": "hospital-relationships",
       "email": ""
     },
-    "forms": []
+    "forms": [
+      {
+        "name": "Hospital Relationship enquiry",
+        "file": "hospitalRelationshipEnquiry",
+        "urlName": "hospital-relationship-enquiry",
+        "description": "Description needed"
+      }
+    ]
   },
   {
     "team": {
@@ -133,7 +130,74 @@
       "urlName": "provider-support",
       "email": ""
     },
-    "forms": []
+    "forms": [
+      {
+        "name": "Dummy Code needed",
+        "file": "dummyCodeNeeded",
+        "urlName": "dummy-code-needed",
+        "description": "Description needed"
+      },
+      {
+        "name": "Incorrect Specialist/Practitioner/ZZ Clinic details",
+        "file": "incorrectProviderDetails",
+        "urlName": "incorrect-provider-details",
+        "description": "Description needed"
+      },
+      {
+        "name": "Information received for a closed code",
+        "file": "informationReceivedClosedCode",
+        "urlName": "information-received-closed-code",
+        "description": "Description needed"
+      },
+      {
+        "name": "Multiple Specialist request",
+        "file": "multipleSpecialistRequest",
+        "urlName": "multiple-specialist-request",
+        "description": "Description needed"
+      },
+      {
+        "name": "Provider Rate Table query",
+        "file": "providerRateTableQuery",
+        "urlName": "provider-rate-table-query",
+        "description": "Description needed"
+      },
+      {
+        "name": "Specialist preference query",
+        "file": "specialistPreferenceQuery",
+        "urlName": "specialist-preference-query",
+        "description": "Description needed"
+      },
+      {
+        "name": "Query/Incorrect specialist pad notes",
+        "file": "querySpecialistPadNotes",
+        "urlName": "query-specialist-pad-notes",
+        "description": "Description needed"
+      },
+      {
+        "name": "Sourcing Tool query",
+        "file": "sourcingToolQuery",
+        "urlName": "sourcing-tool-query",
+        "description": "Description needed"
+      },
+      {
+        "name": "Sourcing Tool requests",
+        "file": "sourcingToolRequestsHardcoding",
+        "urlName": "sourcing-tool-requests-hardcoding-points-variance",
+        "description": "Hardcoding and Point Variance"
+      },
+      {
+        "name": "Specialist/Practitioner recognition query",
+        "file": "specialistPractitionerRecognitionQuery",
+        "urlName": "specialist-practitioner-recognition-query",
+        "description": "Description needed"
+      },
+      {
+        "name": "What code to use for upcoming surgery?",
+        "file": "whatCodeUpcomingSurgery",
+        "urlName": "what-code-upcoming-surgery",
+        "description": "Description needed"
+      }
+    ]
   },
   {
     "team": {
@@ -141,6 +205,19 @@
       "urlName": "provider-investigations",
       "email": ""
     },
-    "forms": []
+    "forms": [
+      {
+        "name": "Concerns about provider",
+        "file": "concernsAboutProvider",
+        "urlName": "concerns-about-provider",
+        "description": "You have concerns about provider behaviour and/or potential fraud"
+      },
+      {
+        "name": "Potential Medical or Clinical negligence",
+        "file": "potentialNegligence",
+        "urlName": "potential-negligence",
+        "description": "You have concerns about a clinical or medical provider"
+      }
+    ]
   }
 ]

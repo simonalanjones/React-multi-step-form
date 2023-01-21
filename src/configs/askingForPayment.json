@@ -21,7 +21,7 @@
     ]
   },
   {
-    "step": 1,
+    "step": 2,
     "heading": "Member details",
     "items": [
       [
@@ -80,7 +80,14 @@
           "name": "memberMadeProviderAware",
           "label": "Did the member make provider aware of their AXA policy with us",
           "id": "memberMadeProviderAware",
-          "options": ["Yes", "No"]
+          "options": ["Yes", "No"],
+          "validationType": "string",
+          "validations": [
+            {
+              "type": "required",
+              "params": ["this field is required"]
+            }
+          ]
         }
       ],
       [
@@ -89,13 +96,20 @@
           "name": "hasMemberPaid",
           "label": "Has the member paid",
           "id": "hasMemberPaid",
-          "options": ["Yes", "No"]
+          "options": ["Yes", "No"],
+          "validationType": "string",
+          "validations": [
+            {
+              "type": "required",
+              "params": ["this field is required"]
+            }
+          ]
         }
       ]
     ]
   },
   {
-    "step": 2,
+    "step": 3,
     "heading": "Provider details",
     "items": [
       [
@@ -153,7 +167,7 @@
   },
 
   {
-    "step": 3,
+    "step": 4,
     "heading": "Your details",
     "items": [
       {
@@ -187,10 +201,11 @@
         ]
       },
       {
-        "type": "text",
-        "name": "yourDept",
-        "label": "Your department",
-        "id": "yourDept",
+        "type": "radio",
+        "name": "workInCR",
+        "label": "Do you work in Complaints Resolution?",
+        "id": "workInCR",
+        "options": ["Yes", "No"],
         "validationType": "string",
         "validations": [
           {

@@ -3,21 +3,47 @@
     "step": 1,
     "heading": "Your query",
     "items": [
-      {
-        "type": "textArea",
-        "name": "theRequest",
-        "label": "What would you like us to do?",
-        "labelHelper": "Please be as detailed as possible and explain your expected outcome if appropriate",
-        "id": "theRequest",
-        "rows": 5,
-        "validationType": "string",
-        "validations": [
-          {
-            "type": "required",
-            "params": ["this field is required"]
-          }
-        ]
-      }
+      [
+        {
+          "type": "textArea",
+          "name": "theRequest",
+          "label": "What would you like us to do?",
+          "labelHelper": "Please be as detailed as possible and explain your expected outcome if appropriate",
+          "id": "theRequest",
+          "rows": 5,
+          "validationType": "string",
+          "validations": [
+            {
+              "type": "required",
+              "params": ["this field is required"]
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "type": "text",
+          "name": "contactWho",
+          "label": "Who do you want us to contact?",
+          "labelHelper": "Name of person and who they are e.g. member/secretary/hospital contact",
+          "id": "contactWho"
+        },
+        {
+          "type": "text",
+          "name": "relevantContact",
+          "label": "Relevant email/telephone number",
+          "id": "relevantContact"
+        }
+      ],
+      [
+        {
+          "type": "text",
+          "name": "spinecluNumber",
+          "label": "SPINE/CLU number",
+          "labelHelper": "SPINE/CLU number prompting your referral",
+          "id": "spinecluNumber"
+        }
+      ]
     ]
   },
 
@@ -100,14 +126,7 @@
           "type": "text",
           "name": "hospitalCode",
           "label": "Hospital code",
-          "id": "hospitalCode",
-          "validationType": "string",
-          "validations": [
-            {
-              "type": "required",
-              "params": ["this field is required"]
-            }
-          ]
+          "id": "hospitalCode"
         },
         {
           "type": "textArea",
@@ -138,27 +157,19 @@
     "items": [
       [
         {
-          "type": "text",
-          "name": "contactWho",
-          "label": "Who do you want us to contact?",
-          "labelHelper": "Name of person and who they are e.g. member/secretary/hospital contact",
-          "id": "contactWho"
+          "type": "date",
+          "name": "procedureDate",
+          "label": "Date of procedure",
+          "id": "procedureDate"
         },
         {
           "type": "text",
-          "name": "relevantContact",
-          "label": "Relevant email/telephone number",
-          "id": "relevantContact"
+          "name": "procedureCodeTreatmentType",
+          "label": "Procedure code treatment type",
+          "id": "procedureCodeTreatmentType"
         }
       ],
       [
-        {
-          "type": "text",
-          "name": "spineOrCluNumber",
-          "label": "SPINE/CLU number",
-          "labelHelper": "SPINE/CLU number prompting your referral",
-          "id": "spineOrCluNumber"
-        },
         {
           "type": "textArea",
           "name": "procedureCodes",
