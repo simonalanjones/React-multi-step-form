@@ -43,7 +43,7 @@ const StepContent = ({
 
       <div className="flex-grow pl-4">
         <h2
-          className={`mb-1 mt-1 text-sm uppercase ${textColourClass} font-bold `}
+          className={`mb-1 mt-1 text-base uppercase ${textColourClass}  font-bold`}
         >
           {title}
         </h2>
@@ -94,7 +94,7 @@ export const FutureStep = ({ title }) => (
     postColourClass="bg-gray-300"
     fillColourClass="bg-white"
     borderColourClass="border-gray-300"
-    paddingBottomClass="pb-10"
+    paddingBottomClass="pb-8"
     title={title}
     icon={null}
   />
@@ -106,7 +106,7 @@ export const CurrentStep = ({ title }) => (
     postColourClass="bg-gray-300"
     fillColourClass="bg-white"
     borderColourClass="border-blue-800"
-    paddingBottomClass="pb-10"
+    paddingBottomClass="pb-8"
     title={title}
     icon={circleIcon}
   />
@@ -118,7 +118,7 @@ export const PreviousStep = ({ title }) => (
     postColourClass="bg-blue-800"
     fillColourClass="bg-blue-800"
     borderColourClass="border-blue-800"
-    paddingBottomClass="pb-10"
+    paddingBottomClass="pb-8"
     title={title}
     icon={tickIcon}
   />
