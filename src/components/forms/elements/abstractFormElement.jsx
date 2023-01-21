@@ -3,6 +3,7 @@ import TextInput from './textInput';
 import TextArea from './textArea';
 import RadioGroup from './radioGroup';
 import SelectOptions from './selectOptions';
+import Checkbox from './checkbox';
 
 const AbstractFormElement = ({ item }) => {
   const fieldMap = {
@@ -11,6 +12,7 @@ const AbstractFormElement = ({ item }) => {
     select: SelectOptions,
     textArea: TextArea,
     date: DateInput,
+    checkbox: Checkbox,
   };
   const FormElement = fieldMap[item.type];
 
