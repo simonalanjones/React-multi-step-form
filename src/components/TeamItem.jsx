@@ -9,7 +9,7 @@ const TeamItem = ({ teamName, selected, selectedCallback }) => {
       </div>
     </div>
   ) : (
-    <div className="mb-6 flex w-64 rounded-md bg-blue-800 py-2">
+    <div className="mb-6 flex w-64 rounded-md bg-blue-600 py-2">
       <div className="mx-auto text-sm font-semibold text-white">{teamName}</div>
     </div>
   );
