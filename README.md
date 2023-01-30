@@ -1,6 +1,6 @@
 # React-multi-step-form
 
-A multi-wizard style form (multiple steps through mutiple forms) using JSON data.
+A multi-wizard style form builder (multiple steps through mutiple forms) using JSON data. See config directory for example form configs.
 
 ## Built with
 
