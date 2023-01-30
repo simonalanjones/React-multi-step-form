@@ -1,24 +1,15 @@
 const FormListItem = ({ name, description, url }) => {
   return (
-    <div className="mt-2 mb-6 flex flex-col lg:gap-y-5">
-      <div className="flex flex-row flex-wrap gap-x-6 lg:flex-nowrap">
+    <div className="flex flex-col rounded-md border border-slate-200/80 bg-white px-6 py-4 shadow-sm">
+      <div className="flex flex-row flex-wrap gap-x-6 lg:flex-nowrap ">
         <div className="w-full text-center md:text-left">
-          <p className="text-lg font-medium">{name}</p>
-          <p className="py-1 text-sm text-gray-500">{description}</p>
-        </div>
-
-        <div className="mx-auto sm:mt-3 sm:mb-3 sm:min-w-max md:mx-0 lg:mt-1">
-          <button
+          <span
             onClick={url}
-            className="rounded-lg 
-            border border-gray-200 
-            bg-white py-2.5 px-5 text-sm font-medium 
-            text-gray-900 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-200 
-            hover:bg-gray-100 hover:text-blue-700 
-            "
+            className="text-base font-bold text-gray-600 hover:cursor-pointer hover:text-gray-500/80 hover:underline hover:decoration-gray-400/80 hover:decoration-2 hover:underline-offset-4"
           >
-            Use form
-          </button>
+            {name}
+          </span>
+          <p className="py-2 text-sm text-gray-500">{description}</p>
         </div>
       </div>
     </div>
