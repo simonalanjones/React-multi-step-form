@@ -78,9 +78,10 @@ function Wizard({ stepsData, progressCallback, onSubmit, isSubmitting }) {
         >
           {(formik) => (
             <Form noValidate className="h-full">
+              <div className="shadow sm:overflow-hidden sm:rounded-md"></div>
               {/* <h1 className="pb-6 text-xl">{stepsData[stepNumber].heading}</h1> */}
-              <div className="flex h-full flex-col justify-between rounded-md border border-slate-100 bg-gray-50/30">
-                <div className="max-h-max max-w-2xl px-8 py-8">
+              <div className="flex h-full flex-col justify-between rounded-md border border-slate-200/80 bg-white shadow-sm">
+                <div className="max-h-max max-w-3xl px-8 py-8">
                   {formConfig && <WizardStep stepsData={formConfig} />}
                 </div>
                 <div className="flex grow flex-col-reverse">
