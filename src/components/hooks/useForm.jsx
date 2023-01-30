@@ -5,8 +5,15 @@ const useForm = (urlName) => {
   const [stepsData, setStepsData] = useState(null); // all the wizard steps
   const [headings, setHeadings] = useState(null);
   const [formTitle, setFormTitle] = useState(null);
+  const [formTeam, setFormTeam] = useState(null);
   const { formsIndex, formFetch } = useConfig();
 
+  const getFormTeam = (urlname) =>
+    formsIndex().then((formData) => {
+      return formData.find((item) =>
+        item.forms.some((form) => form.urlName === urlname)
+      ).team;
+    });
   // get the form's filename from the passed url name
   // todo:  fix the dual action of setting title by having it return the form element
   //        and then extracting title and filename individually
@@ -22,6 +29,7 @@ const useForm = (urlName) => {
       })
       .then((form) => {
         setFormTitle(form.name);
+
         return form.file;
       })
       .catch((error) => {
@@ -29,6 +37,11 @@ const useForm = (urlName) => {
       });
 
   useEffect(() => {
+    getFormTeam(urlName).then((teamname) => {
+      setFormTeam(teamname);
+      console.log(teamname);
+    });
+
     getFilename(urlName).then((filename) => {
       formFetch(filename).then((formData) => {
         setStepsData(formData);
@@ -41,7 +54,7 @@ const useForm = (urlName) => {
     });
   }, []);
 
-  return { stepsData, headings, formTitle };
+  return { stepsData, headings, formTitle, formTeam };
 };
 
 export default useForm;
