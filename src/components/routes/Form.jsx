@@ -9,12 +9,12 @@ const Form = () => {
   const [stepNumber, setStepNumber] = useState(null);
   const params = useParams();
   const navigate = useNavigate();
-  const { stepsData, headings, formTitle } = useForm(params.id);
+  const { stepsData, headings, formTitle, formTeam } = useForm(params.id);
   const [isComplete, setIsComplete] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  //console.log(params);
+  //console.log(formTeam);
 
   const restart = () => {
     setIsComplete(false);
@@ -45,14 +45,6 @@ const Form = () => {
     setIsSubmitting(false);
     setIsSubmitted(true);
   }
-
-  // function passed on that can be used to choose another form
-  // this is only needed if the button is embedded in wizard (inner view)
-  // not needed if button is outside formview
-  const onChangeForm = () => {
-    console.log('change requested');
-    navigate('/');
-  };
 
   const SubmittingPanel = () => {
     return (
@@ -157,7 +149,7 @@ const Form = () => {
     stepsData && (
       <FormView
         title={formTitle}
-        onChangeHandler={onChangeForm}
+        team={formTeam}
         progress={
           <Progress
             headings={headings}
