@@ -7,10 +7,10 @@
     },
     "forms": [
       {
-        "name": "Adding a hospital rate",
-        "file": "addingHospitalRate",
-        "urlName": "adding-hospital-rate",
-        "description": "Facilitate a claims payment"
+        "name": "Potential Medical or Clinical negligence",
+        "file": "potentialNegligence",
+        "urlName": "potential-negligence",
+        "description": "You have concerns about a clinical or medical provider."
       }
     ]
   },
@@ -25,13 +25,7 @@
         "name": "Charging for medical reports",
         "file": "chargingForReports",
         "urlName": "charging-for-reports",
-        "description": "The member is being asked by the provider to pay for their medical reports"
-      },
-      {
-        "name": "Asking for payment upfront",
-        "file": "askingForPayment",
-        "urlName": "asking-for-payment",
-        "description": "The member is being asked by the specialist/hospital to pay costs in advance"
+        "description": "The member is being asked by the provider to pay for their medical reports."
       }
     ]
   },
@@ -43,28 +37,58 @@
     },
     "forms": [
       {
-        "name": "Follow up within 10 days / pre-operative assessment",
+        "name": "Information received for a closed code",
+        "file": "informationReceivedClosedCode",
+        "urlName": "information-received-closed-code",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      },
+      {
+        "name": "Asking for payment upfront",
+        "file": "askingForPayment",
+        "urlName": "asking-for-payment",
+        "description": "The member is being asked by the specialist/hospital to pay costs in advance."
+      },
+      {
+        "name": "Specialist preference query",
+        "file": "specialistPreferenceQuery",
+        "urlName": "specialist-preference-query",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      },
+      {
+        "name": "What code to use for upcoming surgery?",
+        "file": "whatCodeUpcomingSurgery",
+        "urlName": "what-code-upcoming-surgery",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      },
+      {
+        "name": "Multiple Specialist request",
+        "file": "multipleSpecialistRequest",
+        "urlName": "multiple-specialist-request",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      },
+      {
+        "name": "Follow-up within 10 days / pre-operative assessment",
         "file": "followUpWithinDaysPreoperativeAssessment",
         "urlName": "follow-up-within-days-preoperative-assessment",
-        "description": "Description needed"
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
       },
       {
         "name": "Pre-operative fee uplift",
         "file": "preOperativeFeeUplift",
         "urlName": "pre-operative-fee-uplift",
-        "description": "Description needed"
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
       },
       {
         "name": "Post-operative fee uplift",
         "file": "postOperativeFeeUplift",
         "urlName": "post-operative-fee-uplift",
-        "description": "Description needed"
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
       },
       {
         "name": "Contractual shortfall chasers",
         "file": "contractShortfallChaser",
         "urlName": "contract-shortfall-chaser",
-        "description": "For fee approved specialists, practitioners and ZZ clinics"
+        "description": "For fee approved specialists, practitioners and ZZ clinics."
       }
     ]
   },
@@ -79,25 +103,25 @@
         "name": "Copy EDI request",
         "file": "copyEdiRequest",
         "urlName": "copy-edi-request",
-        "description": "Description needed"
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
       },
       {
         "name": "Copy remittance for a Provider",
         "file": "copyRemittanceProvider",
         "urlName": "copy-remittance-provider",
-        "description": "Description needed"
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
       },
       {
         "name": "Provider recoup: claim no longer on CREST",
         "file": "providerRecoupCrest",
         "urlName": "provider-recoup-crest",
-        "description": "Description needed"
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
       },
       {
         "name": "Provider stop/reissue Cheque",
         "file": "providerStopChequeReissue",
         "urlName": "provider-stop-cheque-reissue",
-        "description": "Cancel a previously issued cheque to a provider and request a replacement"
+        "description": "Cancel a previously issued cheque to a provider and request a replacement."
       }
     ]
   },
@@ -107,7 +131,14 @@
       "urlName": "hospital-audit-team",
       "email": ""
     },
-    "forms": []
+    "forms": [
+      {
+        "name": "Adding a hospital rate",
+        "file": "addingHospitalRate",
+        "urlName": "adding-hospital-rate",
+        "description": "Facilitate a claims payment."
+      }
+    ]
   },
   {
     "team": {
@@ -120,7 +151,7 @@
         "name": "Hospital Relationship enquiry",
         "file": "hospitalRelationshipEnquiry",
         "urlName": "hospital-relationship-enquiry",
-        "description": "Description needed"
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
       }
     ]
   },
@@ -135,67 +166,45 @@
         "name": "Dummy Code needed",
         "file": "dummyCodeNeeded",
         "urlName": "dummy-code-needed",
-        "description": "Description needed"
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
       },
       {
         "name": "Incorrect Specialist/Practitioner/ZZ Clinic details",
         "file": "incorrectProviderDetails",
         "urlName": "incorrect-provider-details",
-        "description": "Description needed"
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
       },
-      {
-        "name": "Information received for a closed code",
-        "file": "informationReceivedClosedCode",
-        "urlName": "information-received-closed-code",
-        "description": "Description needed"
-      },
-      {
-        "name": "Multiple Specialist request",
-        "file": "multipleSpecialistRequest",
-        "urlName": "multiple-specialist-request",
-        "description": "Description needed"
-      },
+
       {
         "name": "Provider Rate Table query",
         "file": "providerRateTableQuery",
         "urlName": "provider-rate-table-query",
-        "description": "Description needed"
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
       },
-      {
-        "name": "Specialist preference query",
-        "file": "specialistPreferenceQuery",
-        "urlName": "specialist-preference-query",
-        "description": "Description needed"
-      },
+
       {
         "name": "Query/Incorrect specialist pad notes",
         "file": "querySpecialistPadNotes",
         "urlName": "query-specialist-pad-notes",
-        "description": "Description needed"
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
       },
       {
         "name": "Sourcing Tool query",
         "file": "sourcingToolQuery",
         "urlName": "sourcing-tool-query",
-        "description": "Description needed"
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
       },
       {
         "name": "Sourcing Tool requests",
         "file": "sourcingToolRequestsHardcoding",
         "urlName": "sourcing-tool-requests-hardcoding-points-variance",
-        "description": "Hardcoding and Point Variance"
+        "description": "Hardcoding and Point Variance."
       },
       {
         "name": "Specialist/Practitioner recognition query",
         "file": "specialistPractitionerRecognitionQuery",
         "urlName": "specialist-practitioner-recognition-query",
-        "description": "Description needed"
-      },
-      {
-        "name": "What code to use for upcoming surgery?",
-        "file": "whatCodeUpcomingSurgery",
-        "urlName": "what-code-upcoming-surgery",
-        "description": "Description needed"
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
       }
     ]
   },
@@ -210,13 +219,7 @@
         "name": "Concerns about provider",
         "file": "concernsAboutProvider",
         "urlName": "concerns-about-provider",
-        "description": "You have concerns about provider behaviour and/or potential fraud"
-      },
-      {
-        "name": "Potential Medical or Clinical negligence",
-        "file": "potentialNegligence",
-        "urlName": "potential-negligence",
-        "description": "You have concerns about a clinical or medical provider"
+        "description": "You have concerns about provider behaviour and/or potential fraud."
       }
     ]
   }

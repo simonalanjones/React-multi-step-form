@@ -66,28 +66,7 @@
           ]
         }
       ],
-      [
-        {
-          "type": "text",
-          "name": "claimAssesmentNumber",
-          "label": "Claim assessment number",
-          "id": "claimAssesmentNumber"
-        },
-        {
-          "type": "text",
-          "name": "claimNumber",
-          "label": "Claim number",
-          "id": "claimNumber"
-        }
-      ],
-      [
-        {
-          "type": "text",
-          "name": "workpacketNumber",
-          "label": "Workpacket number",
-          "id": "workpacketNumber"
-        }
-      ],
+
       [
         {
           "type": "radio",
@@ -118,6 +97,34 @@
               "params": ["this field is required"]
             }
           ]
+        }
+      ]
+    ]
+  },
+  {
+    "step": 2,
+    "heading": "Claim details",
+    "items": [
+      [
+        {
+          "type": "text",
+          "name": "claimAssesmentNumber",
+          "label": "Claim assessment number",
+          "id": "claimAssesmentNumber"
+        },
+        {
+          "type": "text",
+          "name": "claimNumber",
+          "label": "Claim number",
+          "id": "claimNumber"
+        }
+      ],
+      [
+        {
+          "type": "text",
+          "name": "workpacketNumber",
+          "label": "Workpacket number",
+          "id": "workpacketNumber"
         }
       ]
     ]
@@ -175,20 +182,6 @@
         "name": "yourEmailAddress",
         "label": "Your email address",
         "id": "yourEmailAddress"
-      },
-      {
-        "type": "radio",
-        "name": "workInCR",
-        "label": "Do you work in Complaints Resolution?",
-        "id": "workInCR",
-        "options": ["Yes", "No"],
-        "validationType": "string",
-        "validations": [
-          {
-            "type": "required",
-            "params": ["this field is required"]
-          }
-        ]
       }
     ]
   }
