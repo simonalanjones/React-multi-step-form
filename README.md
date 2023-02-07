@@ -1,4 +1,4 @@
-# ReactJS form wizard builder
+# React form wizard builder
 
 A multi-wizard style form builder (multiple steps through mutiple forms) using JSON data. See config directory for example form configs.
 
