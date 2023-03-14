@@ -1,7 +1,10 @@
 const useConfig = () => {
   async function fetchData() {
     const response = await fetch('./../src/configs/index.json');
-    return await response.json();
+    const forms = await response.json();
+    console.log(forms);
+    //return await response.json();
+    return forms;
   }
 
   async function fetchForm(filename) {
