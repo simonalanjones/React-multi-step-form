@@ -1,10 +1,10 @@
-# ReactJS form wizard builder
+# React form wizard builder
 
 A multi-wizard style form builder (multiple steps through mutiple forms) using JSON data. See config directory for example form configs.
 
 ## Built with
 
-- [Create React App](https://create-react-app.dev/docs/adding-typescript/)
+- [Vite](https://vitejs.dev/)
 - [Formik](https://formik.org/)
 - [Yup](https://www.npmjs.com/package/yup)
 - [Tailwind CSS](https://tailwindcss.com/)
