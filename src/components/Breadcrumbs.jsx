@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 export const Separator = () => {
   return (
     <span className="px-2 text-sm font-bold text-blue-800">
@@ -57,23 +57,25 @@ export const CrumbLink = ({ text, callback }) => {
     </span>
   );
 };
+const Breadcrumbs = ({ title, teamUrl, teamName }) => (
+  <div className="border-b border-slate-200">
+    <div className="_bg-gray-50 _px-8 mx-auto flex h-16 w-full max-w-5xl place-content-start items-center  pt-4 pb-4">
+      <span className="py-1 text-sm font-bold uppercase text-blue-800 decoration-2 underline-offset-8 hover:cursor-pointer hover:underline">
+        <Link to="/">HOME</Link>
+      </span>
 
-const Breadcrumbs = () => {
-  // function Breadcrumbs() {
-  //   let matches = useMatches();
-  //   let crumbs = matches
-  //     // first get rid of any matches that don't have handle and crumb
-  //     .filter((match) => Boolean(match.handle?.crumb))
-  //     // now map them into an array of elements, passing the loader
-  //     // data to each one
-  //     .map((match) => match.handle.crumb(match.data));
-  //   return (
-  //     <ol>
-  //       {crumbs.map((crumb, index) => (
-  //         <li key={index}>{crumb}</li>
-  //       ))}
-  //     </ol>
-  //   );
-  // }
-};
-// export default Breadcrumbs;
+      <span className="px-2 text-sm font-bold text-blue-800">
+        <ChevronIcon />
+      </span>
+      <span className="text-sm font-bold uppercase text-blue-800">
+        <Link to={`/team/${teamUrl}`}>{teamName}</Link>
+      </span>
+      <span className="px-2 font-bold text-blue-800">
+        <ChevronIcon />
+      </span>
+      <p className="text-sm font-bold uppercase text-gray-600">{title}</p>
+    </div>
+  </div>
+);
+
+export default Breadcrumbs;

@@ -14,8 +14,6 @@ const Form = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  //console.log(formTeam);
-
   const restart = () => {
     setIsComplete(false);
     setIsSubmitting(false);

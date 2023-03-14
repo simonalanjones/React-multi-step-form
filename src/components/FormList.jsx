@@ -1,10 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import FormListItem from './FormListItem';
-const FormList = ({ forms, selectedCallback }) => {
+const FormList = ({ forms }) => {
   const navigate = useNavigate();
-
   return (
-    <div className="mb-6 grid grid-cols-2 gap-6">
+    <div className="mb-6 grid grid-cols-1 gap-6 sm:mr-6 md:grid-cols-2">
       {forms.map((option, index) => (
         <FormListItem
           key={index}
