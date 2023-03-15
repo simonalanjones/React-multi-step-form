@@ -14,6 +14,8 @@ const useConfig = () => {
   }
 
   async function fetchForm(filename) {
+    console.log('fetching:', filename);
+    console.log(`${configPath}${filename}.json`);
     const response = await fetch(`${configPath}${filename}.json`);
     return await response.json();
   }
