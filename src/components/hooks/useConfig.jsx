@@ -3,7 +3,7 @@ const useConfig = () => {
     ? import.meta.env.VITE_CONFIG_PATH
     : '/configs/';
 
-  console.log('path:', configPath);
+  console.log('path: ', configPath);
 
   async function fetchData() {
     const response = await fetch(`${configPath}index.json`);
