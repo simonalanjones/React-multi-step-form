@@ -1,7 +1,7 @@
 const useConfig = () => {
   const configPath = import.meta.env.DEV
     ? import.meta.env.VITE_CONFIG_PATH
-    : './configs/';
+    : '/configs/';
 
   console.log('path:', configPath);
 
